@@ -60,3 +60,7 @@ jobs:
         
       # run tests!
       - run: mvn integration-test
+      test:
+      override:
+      - echo "done"
+
