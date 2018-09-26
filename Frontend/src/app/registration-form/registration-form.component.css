@@ -1,0 +1,64 @@
+.a1{
+    text-align: center;
+    /* color: goldenrod; */
+    border-color: black;
+}
+
+h2{
+   color:darkslateblue;
+   font-weight: bold;
+   font-size: 30px;
+   text-decoration: underline; 
+   font-family: sans-serif;
+}
+
+mat-radio-button ~ .mat-radio-button {
+    padding-right: 16px;
+  }
+.form1{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    padding: auto;
+}
+mat-form-field ~ .mat-form-field {
+    width: 100%;
+}
+
+.movieGenre{
+    max-width: 400px;
+  }
+  
+  mat-card ~ .mat-card{
+      /* padding-bottom: 100px; */
+      margin-bottom: 50px;
+      margin-top: 50px;
+      border-color: grey;
+      background-color: floralwhite;
+      border-color: darkgray;
+  }  
+
+  mat-card-title ~ .mat-card-title{
+      color : darkblue;
+      font-weight: bold;
+  }
+  .button1{
+    background-color: blue;
+    color: white;
+    float:right;
+    margin-bottom: 0px;
+ 
+ }
+ .button2{
+    background-color: blue;
+    color:white;
+ }
+ .form1{
+    margin-left: 350px;
+    margin-right:350px;
+ }
+ .card-container {
+    display: flex;
+    flex-flow: row wrap;
+    }
