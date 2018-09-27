@@ -17,7 +17,6 @@ export interface Language {
   styleUrls: ["./registration-form.component.css"]
 })
 export class RegistrationFormComponent implements OnInit {
- // user= new UserRegistration;
 
  userMobile: string;
  emailId: string;
@@ -29,6 +28,12 @@ export class RegistrationFormComponent implements OnInit {
  fburl: string;
  twitterurl: string;
  prefLang: string[]= new Array();
+
+
+ formGroup1: FormGroup;
+ formGroup2: FormGroup;
+ formGroup3: FormGroup;
+ formGroup4: FormGroup;
 
 user:UserRegistration = new UserRegistration();
   hide = true;
@@ -49,6 +54,32 @@ user:UserRegistration = new UserRegistration();
   constructor(private formBuilder: FormBuilder,private registrationService: RegistrationService, private router:Router) { }
 
   ngOnInit() {
+
+    this.formGroup1 = this.formBuilder.group({
+
+      userMobile: ['', [Validators.required, Validators.minLength(10)]],
+      emailId: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+
+    this.formGroup2 = this.formBuilder.group({
+      userName: [''],
+      age: [''],
+      city: [''],
+      userGender: ['']
+
+    });
+    this.formGroup3 = this.formBuilder.group({
+      fburl: [''],
+      twitterurl: ['']
+    });
+    
+    this.formGroup4 = this.formBuilder.group({
+      
+      prefLang: ['']
+    });
+
+
   }
 onclick(m){
 this.movieGenere.push(m);
