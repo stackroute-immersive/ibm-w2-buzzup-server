@@ -1,0 +1,213 @@
+
+  <h1 class="a1">User Registration</h1>
+  <div class="example-container">
+  <mat-horizontal-stepper class="form1">
+    <mat-step [stepControl]="formGroup1">
+      <ng-template matStepLabel>Account Information</ng-template>
+
+      <form [formGroup]="formGroup1">
+        <mat-progress-bar mode="determinate" value=25></mat-progress-bar>
+
+        <mat-form-field>
+          <mat-label>Mobile Number</mat-label>
+          <input matInput placeholder="Enter your 10 digit mobile number" formControlName="userMobile" [(ngModel)]="userMobile" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Email Id</mat-label>
+          <input matInput placeholder="abc@example.com" formControlName="emailId" [(ngModel)]="emailId" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="AlphaNumeric password" [type]="hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="password"
+            required>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'Show' : 'Hide'}}</mat-icon>
+        </mat-form-field>
+      </form>
+      <div>
+        <button mat-button matStepperNext class="button1">Next</button>
+      </div>
+    </mat-step>
+
+
+    <mat-step [stepControl]="formGroup2">
+      <ng-template matStepLabel>Personal Information</ng-template>
+      <form [formGroup]="formGroup2">
+        <mat-progress-bar mode="determinate" value=50></mat-progress-bar>
+
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Firstname Lastname" formControlName="userName" [(ngModel)]="userName">
+        </mat-form-field>
+        <br>
+        <mat-radio-group formControlName="userGender" [(ngModel)]="userGender">
+          <mat-label>Gender</mat-label>
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field>
+          <mat-label>Age</mat-label>
+          <input matInput placeholder="Age" formControlName="age" [(ngModel)]="age">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <input matInput placeholder="City" formControlName="city" [(ngModel)]="city">
+        </mat-form-field>
+      </form>
+      <div>
+        <button mat-button matStepperPrevious class="button2">Back</button>
+        <button mat-button matStepperNext class="button1">Next</button>
+      </div>
+
+    </mat-step>
+    <mat-step [stepControl]="formGroup3">
+      <ng-template matStepLabel>Social Information</ng-template>
+      <form [formGroup]="formGroup3">
+        <mat-progress-bar mode="determinate" value=75></mat-progress-bar>
+
+        <mat-form-field>
+          <mat-label>Facebook Url</mat-label>
+          <input matInput placeholder="xyz@facebook.com" formControlName="fburl" [(ngModel)]="fburl">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Twitter Url</mat-label>
+          <input matInput placeholder="xyz@twitter.com" formControlName="twitterurl" [(ngModel)]="twitterurl">
+        </mat-form-field>
+      </form>
+      <div>
+        <button mat-button matStepperPrevious class="button2">Back</button>
+        <button mat-button matStepperNext class="button1">Next</button>
+      </div>
+
+    </mat-step>
+    <mat-step [stepControl]="formGroup4">
+      <ng-template matStepLabel>Preferences</ng-template>
+      <form [formGroup]="formGroup4">
+        <mat-progress-bar mode="determinate" value=100></mat-progress-bar>
+        <h4>Additional Information:</h4>
+
+        <mat-form-field>
+          <mat-label>Your Preferred Language</mat-label>
+          <mat-select (click)="selectLanguage(language.value)" multiple>
+            <mat-option *ngFor="let language of languages" [value]="language.value">
+              {{language.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <br>
+
+        <h4>Your Preferred Movie Genre</h4>
+        <div class="movieDisplay1">
+          <mat-card class="movieGenre">
+            <mat-card-header>
+              <mat-card-title>Romantic Movies</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/romance.jpg"
+              alt="Poster of a romantic movie">
+            <mat-card-actions>
+              <button mat-button (click)="onclick('Romantic Movies')">Click to Choose</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="movieGenre">
+            <mat-card-header>
+              <mat-card-title>Sports Movies</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/chakdeindia.jpg"
+              alt="Poster of a drama movie">
+            <mat-card-actions>
+              <button mat-button (click)="onclick('Sports Movies')">Click to Choose</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="movieGenre">
+            <mat-card-header>
+              <mat-card-title>Horror Movies</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/horror.jpg"
+              alt="Poster of a horror movie">
+            <mat-card-actions>
+              <button mat-button (click)="onclick('Horror Movies')">Click to Choose</button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="movieGenre">
+            <mat-card-header>
+              <mat-card-title>Thriller Movies</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/thriller.jpg" alt="Poster of a thriller movie">
+            <mat-card-actions>
+              <button mat-button (click)="onclick('Thriller Movies')">Click to Choose</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="movieGenre">
+            <mat-card-header>
+              <mat-card-title>Sci-Fi  Movies</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/sciencefiction.jpg" alt="Poster of a science fiction movie">
+            <mat-card-actions>
+              <button mat-button (click)="onclick('Science Fiction Movies')">Click to Choose</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="movieGenre">
+            <mat-card-header>
+              <mat-card-title>Comedy Movies</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/comedy.jpg"
+              alt="Poster of a comedy movie">
+            <mat-card-actions>
+              <button mat-button (click)="onclick('Comedy Movies')">Click to Choose</button>
+            </mat-card-actions>
+          </mat-card>
+
+        </div>
+
+        
+          <h4>Your Preferred Event Category</h4>
+          <div class="eventDisplay">
+          <mat-card class="eventCatg">
+            <mat-card-header>
+              <mat-card-title>StandUp Comedy</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/rsz_stand-up.jpg" alt="Poster of Comicstaan">
+
+            <mat-card-actions>
+              <button mat-button (click)="onclickevent('StandUp Comedy')">Choose</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="eventCatg">
+            <mat-card-header>
+              <mat-card-title>Rock Concert</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/RockBand.jpg" alt="Poster of a Rock Concert">
+
+            <mat-card-actions>
+              <button mat-button (click)="onclickevent('Rock Concert')">Choose</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="eventCatg">
+            <mat-card-header>
+              <mat-card-title>Theatre Play</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="src/rsz_theatre-2.jpg" alt="Poster of Comicstaan">
+            <mat-card-actions>
+              <button mat-button (click)="onclickevent('Theatre Play')">Choose</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </form>
+      <div>
+        <button mat-button matStepperPrevious class="button2">Back</button>
+        <button mat-button matStepperSubmit class="button1">Submit</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

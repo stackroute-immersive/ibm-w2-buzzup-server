@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Distributor-service
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: gaurav
+Implementation-Vendor-Id: com.stackroute
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/ibm-w2-buzzup-server/Distributor-service
+Created-By: Maven Integration for Eclipse
+

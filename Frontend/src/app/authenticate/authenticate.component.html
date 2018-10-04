@@ -1,0 +1,53 @@
+
+<h1 class="a1">Authentication</h1>
+<!-- <div style="text-align:center">
+    <form #f="ngForm">
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput [(ngModel)]="user.emailId" name="emailId" placeholder="Email">
+          </mat-form-field>
+        
+          <mat-form-field>
+            <textarea matInput [(ngModel)]="user.password" name="password" placeholder="Password"></textarea>
+          </mat-form-field>
+        </div>
+      </form>
+    <div class="button-row">
+        <button mat-stroked-button color="primary" (click)="onSubmit(user)">Submit</button>
+    </div>
+</div> -->
+
+<mat-accordion>
+  <span class=pink-text>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>
+          Fill the details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+          <input matInput [(ngModel)]="user.emailId" name="emailId" placeholder="Email">
+        </mat-form-field>
+      <br>
+        <mat-form-field>
+            <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" required>
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'Show' : 'Hide'}}</mat-icon>
+          <!-- <input matInput [(ngModel)]="user.password" name="password" placeholder="Password"> -->
+        </mat-form-field>
+      <br>
+        <button mat-stroked-button color="primary" (click)="onSubmit(user)">Submit</button>
+      <br>
+      <br>
+        Not yet registered?
+      
+        <button mat-stroked-button color="primary" routerLink="/user" >Register</button>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+    </mat-expansion-panel>
+    </span>
+  </mat-accordion>
+  
+  

@@ -1,0 +1,232 @@
+version: '2.1'
+
+services:
+  eureka-server:
+    build: eureka-server/
+    depends_on:
+      config-service:
+        condition: service_healthy
+    restart: always
+    network_mode: "host"
+    image: eureka-service
+    hostname: localhost
+    ports:
+      - 8761:8761
+    healthcheck:
+      test: "exit 0"
+
+  config-service:
+    build: config-service/
+    restart: always
+    network_mode: "host"
+    image: config-service
+    hostname: localhost
+    ports:
+      - 8084:8084
+    healthcheck:
+      test: "exit 0"
+
+  api-gateway:
+    build: zuul-apigateway/
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    restart: always
+    network_mode: "host"
+    image: zuul-service
+    hostname: localhost
+    ports:
+      - 8762:876
+    healthcheck:
+      test: "exit 0"
+
+ 
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://13.232.40.6:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ZOOKEEPER_CONNECT: localhost:2181
+    network_mode: "host"
+    hostname: localhost
+    depends_on:
+      - zookeeper
+    restart: always
+    healthcheck:
+      test: "exit 0"
+      
+  mongodb:
+    image: mongo
+    container_name: "mongodb"
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - 27000:27017
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  user-profile:
+   build: user-profile/
+   image: user-profile
+   restart: always
+   network_mode: "host"
+   hostname: localhost
+   ports:
+     - 8085:8085
+   depends_on:
+     config-service:
+       condition: service_healthy
+     eureka-server:
+       condition: service_healthy
+     mongodb:
+       condition: service_healthy
+     kafka:
+       condition: service_healthy
+   healthcheck:
+     test: "exit 0"
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    container_name: mysql
+    mem_limit: 2g
+    environment: 
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=register
+      - MYSQL_PASSWORD=root
+      - MYSQL_USER=root
+    volumes:
+      - /opt/datasql:/var/lib/mysql
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  authentication-service:
+   build: authentication-service/
+   image: authentication-service
+   network_mode: "host"
+   hostname: localhost
+   ports:
+     - 8080:8080
+   depends_on:
+     config-service:
+       condition: service_healthy
+     eureka-server:
+       condition: service_healthy
+     mysql:
+       condition: service_healthy
+     kafka:
+       condition: service_healthy
+   restart: always
+   healthcheck:
+     test: "exit 0"
+
+  distributor-service:
+   build: distributor-service/
+   image: distributor-service1
+   restart: always
+   network_mode: "host"
+   hostname: localhost
+   ports:
+     - 8088:8088
+   depends_on:
+     config-service:
+       condition: service_healthy
+     eureka-server:
+       condition: service_healthy
+     mongodb:
+       condition: service_healthy
+   healthcheck:
+     test: "exit 0"
+
+  moviescreening-service:
+   build: moviescreening-service/
+   image: moviescreening-service
+   restart: always
+   network_mode: "host"
+   hostname: localhost
+   ports:
+     - 8082:8082
+   depends_on:
+     config-service:
+       condition: service_healthy
+     eureka-server:
+       condition: service_healthy
+     mongodb:
+       condition: service_healthy
+   healthcheck:
+     test: "exit 0"
+
+
+  theatre-service:
+   build: theatre-service/
+   image: theatre-service
+   restart: always
+   network_mode: "host"
+   hostname: localhost
+   ports:
+     - 8087:8087
+   depends_on:
+     config-service:
+       condition: service_healthy
+     eureka-server:
+       condition: service_healthy
+     mongodb:
+       condition: service_healthy
+   healthcheck:
+     test: "exit 0"
+
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    container_name: neo4j
+    mem_limit: 1024m
+    environment: 
+      - NEO4J_AUTH=neo4j/12345
+#      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+#      - NEO4J_apoc_import_file_enabled=true
+#      - NEO4J_dbms_shell_enabled=true
+    volumes:
+#      - ./plugins:/plugins
+      - $HOME/neo4j/data:/data
+#      - ./import:/import 
+    healthcheck:
+      test: "exit 0" 
+
+  neo4jdatamodelling-service:
+   build: neo4jdatamodelling-service/
+   image: neo4jdatamodelling-service
+   restart: always
+   network_mode: "host"
+   hostname: localhost
+   ports:
+    - 8029:8029
+   depends_on:
+    neo4j:
+      condition: service_healthy
+    config-service:
+      condition: service_healthy
+    eureka-server:
+      condition: service_healthy
+   healthcheck:
+    test: "exit 0"
