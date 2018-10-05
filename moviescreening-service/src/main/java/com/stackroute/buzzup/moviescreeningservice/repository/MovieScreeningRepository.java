@@ -1,18 +1,22 @@
 package com.stackroute.buzzup.moviescreeningservice.repository;
 
-import java.util.List;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.stackroute.buzzup.moviescreeningservice.model.MovieScreening;
+import com.stackroute.buzzup.kafka.model.MovieSchedule;
 
+/*
+ * MovieScreeningrepository extends the mongo repository which provides the functions for CRUD operations 
+ * here we have 3 additional methods to be used in service class 
+ */
 @Repository
-public interface MovieScreeningRepository extends MongoRepository<MovieScreening, String> {
-	/*
-	 * this is an interface which performs CRUD operations using MongoRepository
-	 * Interface and there is an additional method for listing out all the movies on
-	 * the basis of cities
-	 */
-	List<MovieScreening> getByCity(String city);
+public interface MovieScreeningRepository extends MongoRepository<MovieSchedule, Integer> {
+
+	
+	public MovieSchedule getByTheatreName(String theatreName);
+	
+	public MovieSchedule getByTheatreId(String theatreId);
+	
+	public MovieSchedule getByEmailId(String email);
+
 }

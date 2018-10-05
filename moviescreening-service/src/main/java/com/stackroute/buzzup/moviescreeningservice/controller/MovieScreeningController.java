@@ -7,54 +7,55 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stackroute.buzzup.moviescreeningservice.exception.MovieScreeningNotCreatedException;
-import com.stackroute.buzzup.moviescreeningservice.exception.MovieScreeningNotFoundException;
-import com.stackroute.buzzup.moviescreeningservice.model.MovieScreening;
+import com.stackroute.buzzup.kafka.model.MovieSchedule;
 import com.stackroute.buzzup.moviescreeningservice.service.MovieScreeningService;
 
+/*
+ * Controller class to hit the api for SAVE,UPDATE AND GET
+ *
+ */
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin("*")
 public class MovieScreeningController {
 
-	/*
-	 * define get and post handler method for movie-screening
-	 * 
-	 */
-	 private MovieScreeningService movieScreeningService;
+	private MovieScreeningService movieScheduleService;
 
 	@Autowired
-	public MovieScreeningController(MovieScreeningService movieScreeningService) {
-		this.movieScreeningService = movieScreeningService;
+	public MovieScreeningController(MovieScreeningService movieScheduleService) {
+		this.movieScheduleService = movieScheduleService;
 	}
 
-	@PostMapping("/movie")
-	public ResponseEntity<?> saveMovieScreening(@RequestBody MovieScreening movieScreening) {
-		ResponseEntity<?> responseEntity = null;
-		try {
-			MovieScreening ms = movieScreeningService.saveMovieDetails(movieScreening);
-			responseEntity = new ResponseEntity<MovieScreening>(ms, HttpStatus.CREATED);
-		} catch (MovieScreeningNotCreatedException e) {
-			responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.CONFLICT);
-		}
-		return responseEntity;
+	@PostMapping(value = "/save")
+	public ResponseEntity<?> saveMovie(@RequestBody MovieSchedule movieSchedule) {
+
+		MovieSchedule movieObj = movieScheduleService.addMovieSchedule(movieSchedule);
+
+		return new ResponseEntity<MovieSchedule>(movieObj, HttpStatus.OK);
+
 	}
 
-	@GetMapping("/movie/{id}")
-	public ResponseEntity<?> getTheaterDetails(@PathVariable("id") String id) {
-		ResponseEntity<?> responseEntity = null;
-		try {
-			List<MovieScreening> mos = movieScreeningService.getTheaterByCity(id);
-			responseEntity = new ResponseEntity<List<MovieScreening>>(mos, HttpStatus.OK);
-		} catch (MovieScreeningNotFoundException e) {
-			responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-		}
-		return responseEntity;
+	@GetMapping(value = "/movies")
+	public ResponseEntity<List<MovieSchedule>> getAllMovies() {
+
+		List<MovieSchedule> movieObj = movieScheduleService.getMoviesSchedule();
+		return new ResponseEntity<List<MovieSchedule>>(movieObj, HttpStatus.OK);
+
 	}
+
+	@PutMapping(value = "/update")
+	public ResponseEntity<?> updateMovie(@RequestParam String emailId, @RequestBody MovieSchedule movieSchedule) {
+
+		MovieSchedule movieObj = movieScheduleService.updateMovieSchedule(emailId, movieSchedule);
+
+		return new ResponseEntity<MovieSchedule>(movieObj, HttpStatus.OK);
+	}
+
 }

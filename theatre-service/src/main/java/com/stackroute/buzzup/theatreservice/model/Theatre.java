@@ -1,51 +1,54 @@
 package com.stackroute.buzzup.theatreservice.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Arrays;
-import org.springframework.data.annotation.Id;
-
-//import javax.persistence.*;
-/*
- * Please note that this class is annotated with @Document annotation
- * @Document identifies a domain object to be persisted to MongoDB.
- *  */
 @Document
+
 public class Theatre {
-	/*
-	 * This class should have seven fields
-	 * (Id,Name,city,address,category,noOfSeats,NoOfScreens). Out of these SEVEN
-	 * fields, the field Id should be annotated with @Id. This class should also
-	 * contain the getters and setters for the fields along with the no-arg ,
-	 * parameterized constructor and toString method.
-	 */
 	@Id
+	private String theatreId;
 	private String emailId;
-	private String theaterId;
-	private String theaterName;
-	private String theaterCity;
-	private String theaterAddress;
-	private String[] theaterCategory;
-	private String[] noOfSeats;
-	private int noOfScreen;
+	private String location;
+	private String city;
+	private String name;
+	private String licenseNo;
+	private String totalnumberOfSeats;
+	private String[] screenedmovies;
+	private String[] runningmovies;
+	private Seats seatLayout;
+	private String[] typesOfSeats;
+	private String[] numberOfSeats;
 
 	public Theatre() {
-	   
 		super();
-	
+		// TODO Auto-generated constructor stub
 	}
 
-	public Theatre(String emailId, String theaterId, String theaterName, String theaterCity, String theaterAddress,
-			String[] theaterCategory, String[] noOfSeats, int noOfScreen) {
+	public Theatre(String theatreId, String emailId, String location, String city, String name, String licenseNo,
+			String totalnumberOfSeats, String[] screenedmovies, String[] runningmovies, Seats seatLayout,
+			String[] typesOfSeats, String[] numberOfSeats) {
 		super();
+		this.theatreId = theatreId;
 		this.emailId = emailId;
-		this.theaterId = theaterId;
-		this.theaterName = theaterName;
-		this.theaterCity = theaterCity;
-		this.theaterAddress = theaterAddress;
-		this.theaterCategory = theaterCategory;
-		this.noOfSeats = noOfSeats;
-		this.noOfScreen = noOfScreen;
+		this.location = location;
+		this.city = city;
+		this.name = name;
+		this.licenseNo = licenseNo;
+		this.totalnumberOfSeats = totalnumberOfSeats;
+		this.screenedmovies = screenedmovies;
+		this.runningmovies = runningmovies;
+		this.seatLayout = seatLayout;
+		this.typesOfSeats = typesOfSeats;
+		this.numberOfSeats = numberOfSeats;
+	}
+
+	public String getTheatreId() {
+		return theatreId;
+	}
+
+	public void setTheatreId(String theatreId) {
+		this.theatreId = theatreId;
 	}
 
 	public String getEmailId() {
@@ -56,68 +59,84 @@ public class Theatre {
 		this.emailId = emailId;
 	}
 
-	public String getTheaterId() {
-		return theaterId;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setTheaterId(String theaterId) {
-		this.theaterId = theaterId;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
-	public String getTheaterName() {
-		return theaterName;
+	public String getCity() {
+		return city;
 	}
 
-	public void setTheaterName(String theaterName) {
-		this.theaterName = theaterName;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public String getTheaterCity() {
-		return theaterCity;
+	public String getName() {
+		return name;
 	}
 
-	public void setTheaterCity(String theaterCity) {
-		this.theaterCity = theaterCity;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getTheaterAddress() {
-		return theaterAddress;
+	public String getLicenseNo() {
+		return licenseNo;
 	}
 
-	public void setTheaterAddress(String theaterAddress) {
-		this.theaterAddress = theaterAddress;
+	public void setLicenseNo(String licenseNo) {
+		this.licenseNo = licenseNo;
 	}
 
-	public String[] getTheaterCategory() {
-		return theaterCategory;
+	public String getTotalnumberOfSeats() {
+		return totalnumberOfSeats;
 	}
 
-	public void setTheaterCategory(String[] theaterCategory) {
-		this.theaterCategory = theaterCategory;
+	public void setTotalnumberOfSeats(String totalnumberOfSeats) {
+		this.totalnumberOfSeats = totalnumberOfSeats;
 	}
 
-	public String[] getNoOfSeats() {
-		return noOfSeats;
+	public String[] getScreenedmovies() {
+		return screenedmovies;
 	}
 
-	public void setNoOfSeats(String[] noOfSeats) {
-		this.noOfSeats = noOfSeats;
+	public void setScreenedmovies(String[] screenedmovies) {
+		this.screenedmovies = screenedmovies;
 	}
 
-	public int getNoOfScreen() {
-		return noOfScreen;
+	public String[] getRunningmovies() {
+		return runningmovies;
 	}
 
-	public void setNoOfScreen(int noOfScreen) {
-		this.noOfScreen = noOfScreen;
+	public void setRunningmovies(String[] runningmovies) {
+		this.runningmovies = runningmovies;
 	}
 
-	@Override
-	public String toString() {
-		return "Theatre [emailId=" + emailId + ", theaterId=" + theaterId + ", theaterName=" + theaterName
-				+ ", theaterCity=" + theaterCity + ", theaterAddress=" + theaterAddress + ", theaterCategory="
-				+ Arrays.toString(theaterCategory) + ", noOfSeats=" + Arrays.toString(noOfSeats) + ", noOfScreen="
-				+ noOfScreen + "]";
+	public Seats getSeatLayout() {
+		return seatLayout;
+	}
+
+	public void setSeatLayout(Seats seatLayout) {
+		this.seatLayout = seatLayout;
+	}
+
+	public String[] getTypesOfSeats() {
+		return typesOfSeats;
+	}
+
+	public void setTypesOfSeats(String[] typesOfSeats) {
+		this.typesOfSeats = typesOfSeats;
+	}
+
+	public String[] getNumberOfSeats() {
+		return numberOfSeats;
+	}
+
+	public void setNumberOfSeats(String[] numberOfSeats) {
+		this.numberOfSeats = numberOfSeats;
 	}
 
 }

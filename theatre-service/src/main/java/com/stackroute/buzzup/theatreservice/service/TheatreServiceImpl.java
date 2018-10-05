@@ -1,117 +1,55 @@
 package com.stackroute.buzzup.theatreservice.service;
 
-import java.util.NoSuchElementException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.stackroute.buzzup.theatreservice.exception.TheatreAlreadyExistsException;
 import com.stackroute.buzzup.theatreservice.exception.TheatreNotFoundException;
-import com.stackroute.buzzup.theatreservice.model.*;
+import com.stackroute.buzzup.theatreservice.model.Theatre;
 import com.stackroute.buzzup.theatreservice.repository.TheatreRepository;
 
-/*
- * Service classes are used here to implement additional business logic/validation 
- * This class has to be annotated with @Service annotation.
- * @Service - It is a specialization of the component annotation. It doesn't currently 
- * provide any additional behavior over the @Component annotation, but it's a good idea 
- * to use @Service over @Component in service-layer classes because it specifies intent 
- * better. Additionally, tool support and additional behavior might rely on it in the 
- * future.
-*/
 @Service
 public class TheatreServiceImpl implements TheatreService {
+
 	private TheatreRepository theatreRepository;
 
-	/*
-	 * Autowiring should be implemented for the TheatreRepository. (Use
-	 * Constructor-based autowiring) Please note that we should not create any
-	 * object using the new keyword.
-	 */
+	// autowiring Repository class
 	@Autowired
-	public TheatreServiceImpl(TheatreRepository theatreRepository) {
-		this.theatreRepository = theatreRepository;
-	}
-	/*
-	 * This method should be used to register a new theatre.Call the corresponding
-	 * method of Repository interface.
-	 */
+	public TheatreServiceImpl(TheatreRepository registrationRepository) {
 
-	public Theatre registerTheatre(Theatre theatre) throws TheatreAlreadyExistsException {
-		Theatre theatre1 = theatreRepository.insert(theatre);
-		if (theatre1 == null) {
-			throw new TheatreAlreadyExistsException("Unable to create new Theatre");
-		}
-		return theatre1;
+		this.theatreRepository = registrationRepository;
 	}
 
-	/*
-	 * This method should be used to delete an existing theatre.Call the
-	 * corresponding method of Repository interface.
-	 */
-	public boolean deleteTheatre(String theaterId) throws TheatreNotFoundException {
-		boolean status = false;
-		Theatre fetchedTheatre = theatreRepository.findById(theaterId).get();
-		if (fetchedTheatre == null) {
-			throw new TheatreNotFoundException("Theatre with given name does not exists");
-
-		} else {
-			theatreRepository.delete(fetchedTheatre);
-			status = true;
-		}
-		return status;
+	// method for saving theatre object in mongo
+	@Override
+	public Theatre saveTheatre(Theatre theatre) throws TheatreAlreadyExistsException {
+		if (!theatreRepository.existsByName(theatre.getName())) {
+			Theatre theatreSaved = theatreRepository.save(theatre);
+			return theatreSaved;
+		} else
+			throw new TheatreAlreadyExistsException("Theatre already exists");
 	}
 
-	/*
-	 * This method should be used to update a existing theatre.Call the
-	 * corresponding method of Repository interface.
-	 */
-	public Theatre updateTheatre(String theaterId, Theatre theatre) throws TheatreNotFoundException {
+	// method for updating theatre object in mongo
+	@Override
+	public Theatre updateTheatre(Theatre theatre) {
+		Theatre theatreUpdated = theatreRepository.save(theatre);
 
-		try {
-			Theatre fecthedTheatre = theatreRepository.findById(theaterId).get();
-			fecthedTheatre.setEmailId(theatre.getEmailId());
-			fecthedTheatre.setTheaterId(theatre.getTheaterId());
-			fecthedTheatre.setTheaterName(theatre.getTheaterName());
-			fecthedTheatre.setTheaterCity(theatre.getTheaterCity());
-			fecthedTheatre.setTheaterAddress(theatre.getTheaterAddress());
-			fecthedTheatre.setTheaterCategory(theatre.getTheaterCategory());
-			fecthedTheatre.setNoOfSeats(theatre.getNoOfSeats());
-			fecthedTheatre.setNoOfScreen(theatre.getNoOfScreen());
-
-			theatreRepository.save(fecthedTheatre);
-			return fecthedTheatre;
-
-		} catch (NoSuchElementException exception) {
-
-			throw new TheatreNotFoundException("Theatre does not exists");
-		}
+		return theatreUpdated;
 	}
 
-	/*
-	 * This method should be used to get a theatre by Id.Call the corresponding
-	 * method of Respository interface.
-	 */
-	public Theatre getTheatreByemailId(String emailId) throws TheatreNotFoundException {
+	// method for retriving theatre object by given title
+	@Override
+	public Theatre getTheatreByTheatreTitle(String theatreTitle) {
 
-		Theatre fetchedTheatre = theatreRepository.findById(emailId).get();
-		if (fetchedTheatre != null)
-			return fetchedTheatre;
-		else
-			throw new TheatreNotFoundException("Theatre does not exists");
+		Theatre list = theatreRepository.getByName(theatreTitle);
+		return list;
 	}
 
-	/*
-	 * This method should be used to get a theatre by city.Call the corresponding
-	 * method of Respository interface.
-	 */
-	/*
-	 * public Theatre getTheatreByCity(String city) throws TheatreNotFoundException
-	 * {
-	 * 
-	 * try { Theatre fetchedTheatre = theatreRepository.findById(city).get();
-	 * 
-	 * return fetchedTheatre; } catch (NoSuchElementException e) { throw new
-	 * TheatreNotFoundException("Theatre does not exists"); }
-	 */
+	// method for retriving theatre object by given email id
+	@Override
+	public Theatre getEmailId(String emailId) throws TheatreNotFoundException {
+		Theatre theatre = theatreRepository.getByEmailId(emailId);
+		return theatre;
+	}
+
 }

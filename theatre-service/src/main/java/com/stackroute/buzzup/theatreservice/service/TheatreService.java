@@ -6,18 +6,12 @@ import com.stackroute.buzzup.theatreservice.model.Theatre;
 
 public interface TheatreService {
 
-	/*
-	 * Should not modify this interface. You have to implement these methods in
-	 * corresponding Impl classes
-	 */
+	public Theatre saveTheatre(Theatre theatre) throws TheatreAlreadyExistsException;
 
-    Theatre registerTheatre(Theatre theatre)throws TheatreAlreadyExistsException ;
-    
-    boolean deleteTheatre(String theaterId) throws TheatreNotFoundException;
+	public Theatre updateTheatre(Theatre theatre) throws TheatreNotFoundException;
 
-    Theatre updateTheatre(String theaterId, Theatre theatre) throws TheatreNotFoundException;
+	public Theatre getTheatreByTheatreTitle(String theatreTitle) throws TheatreNotFoundException;
 
-    Theatre getTheatreByemailId(String emailId) throws TheatreNotFoundException;
-    
-    /*Theatre getTheatreByCity(String city) throws TheatreNotFoundException;*/
+	public Theatre getEmailId(String emailId) throws TheatreNotFoundException;
+
 }

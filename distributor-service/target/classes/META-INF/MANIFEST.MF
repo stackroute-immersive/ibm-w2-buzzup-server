@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: Distributor-service
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: gaurav
+Built-By: utkarsh
 Implementation-Vendor-Id: com.stackroute
 Build-Jdk: 1.8.0_181
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
