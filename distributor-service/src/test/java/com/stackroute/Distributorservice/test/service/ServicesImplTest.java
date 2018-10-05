@@ -37,7 +37,7 @@ public class ServicesImplTest
     @Before
     public void setUp() throws Exception {
 
-        MockitoAnnotations.initMocks(this);
+        
 
         Movie movie = new Movie();
         movie.setId("1");

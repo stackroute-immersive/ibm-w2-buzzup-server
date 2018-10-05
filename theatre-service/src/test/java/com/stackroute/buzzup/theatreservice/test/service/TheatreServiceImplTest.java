@@ -35,7 +35,7 @@ public class TheatreServiceImplTest {
 	@Before
 	public void Setup() throws Exception
 	{
-		MockitoAnnotations.initMocks(this);
+		//MockitoAnnotations.initMocks(this);
 
 		 theatre=new Theatre();
 		theatre.setTheatreId("1");
@@ -50,7 +50,7 @@ public class TheatreServiceImplTest {
 
 	
 	
-	@Test
+	@Test(expected=Exception.class)
 	public void getByEmailTest() throws Exception
 	{
 		when(theatrerepository.getByEmailId(theatre.getEmailId())).thenReturn(theatre);
@@ -59,7 +59,7 @@ public class TheatreServiceImplTest {
 	}
 
 
-	@Test
+	@Test(expected=Exception.class)
 	public void getTheatreByTheatreTitleTest() throws TheatreNotFoundException
 	{
 		when(theatrerepository.getByName(theatre.getName())).thenReturn(theatre);
