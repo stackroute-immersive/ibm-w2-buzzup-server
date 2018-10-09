@@ -1,6 +1,6 @@
 Codacy
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8dc4352e14a54bdeaf5531135aebd243)](https://www.codacy.com/app/abdulrahemansyed/ibm-w2-buzzup-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stackroute-immersive/ibm-w2-buzzup-server&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1463420d2d7349df969d50cf812f9a90)](https://www.codacy.com/app/utkarsh311/ibm-w2-matchzone-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stackroute-immersive/ibm-w2-matchzone-server&amp;utm_campaign=Badge_Grade)
 
 CircleCI
 
