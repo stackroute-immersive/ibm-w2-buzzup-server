@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>com.stackroute</groupId>
 		<artifactId>ibm-w2-buzzup-server</artifactId>
-		<version>1.0.1</version>
+		<version>1.1.0</version>
 		<!--<relativePath /> lookup parent from repository -->
 	</parent>
 	<properties>

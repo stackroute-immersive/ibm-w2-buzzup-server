@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.stackroute.buzzup.searchservice.test.controller.MovieSearchControllerTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.695 s - in com.stackroute.buzzup.searchservice.test.controller.MovieSearchControllerTest

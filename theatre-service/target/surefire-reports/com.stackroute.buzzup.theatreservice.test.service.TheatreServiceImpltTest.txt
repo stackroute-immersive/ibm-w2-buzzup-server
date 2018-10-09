@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.stackroute.buzzup.theatreservice.test.service.TheatreServiceImpltTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.729 s - in com.stackroute.buzzup.theatreservice.test.service.TheatreServiceImpltTest

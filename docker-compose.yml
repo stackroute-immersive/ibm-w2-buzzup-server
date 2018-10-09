@@ -122,6 +122,7 @@ services:
   authentication-service:
    build: authentication-service/
    image: authentication-service
+   restart: always
    network_mode: "host"
    hostname: localhost
    ports:
@@ -212,21 +213,3 @@ services:
 #      - ./import:/import 
     healthcheck:
       test: "exit 0" 
-
-  neo4jdatamodelling-service:
-   build: neo4jdatamodelling-service/
-   image: neo4jdatamodelling-service
-   restart: always
-   network_mode: "host"
-   hostname: localhost
-   ports:
-    - 8029:8029
-   depends_on:
-    neo4j:
-      condition: service_healthy
-    config-service:
-      condition: service_healthy
-    eureka-server:
-      condition: service_healthy
-   healthcheck:
-    test: "exit 0"

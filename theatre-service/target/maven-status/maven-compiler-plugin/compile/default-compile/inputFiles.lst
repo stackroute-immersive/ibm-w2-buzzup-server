@@ -1,9 +1,0 @@
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/TheatreServiceApplication.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/exception/TheatreAlreadyExistsException.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/service/TheatreServiceImpl.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/repository/TheatreRepository.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/controller/TheatreController.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/exception/TheatreNotFoundException.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/model/Theatre.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/service/TheatreService.java
-/home/utkarsh/Downloads/theatre-Service/src/main/java/com/stackroute/buzzup/theatreservice/model/Seats.java

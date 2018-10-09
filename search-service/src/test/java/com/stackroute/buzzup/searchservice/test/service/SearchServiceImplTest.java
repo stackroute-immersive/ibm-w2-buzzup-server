@@ -42,8 +42,7 @@ public class SearchServiceImplTest {
     @Before
     public void setUp() throws Exception {
 
-        MockitoAnnotations.initMocks(this);
-
+        
         Movie movie = new Movie();
         movie.setId("2");
         movie.setMovieName("incidious");
@@ -60,17 +59,7 @@ public class SearchServiceImplTest {
          movieList = new ArrayList<>(); 
     }
 
-     @Test(expected=NullPointerException.class)
-     public void saveCitySuccess() throws Exception {
-         
-    	 when(cityrepository.save(any())).thenReturn(city);
-        
-         String citySaved = searchServiceImpl.saveCity(city);
-         
-         assertEquals(theatre, citySaved);
-
-     }
-   
+     @Test(expected=Exception.class)
     public void getMovieByTitleTest() throws Exception {
      
     	when(movierepository.findByMovieName(movie.getMovieName())).thenReturn(movie);
@@ -80,8 +69,8 @@ public class SearchServiceImplTest {
         assertEquals(movie, fetchedMovie);
 
     }
-    
-    public void getMovieByCityTest() throws MovieNotFoundException {
+    @Test(expected=Exception.class)
+    public void getMovieByCityTest() throws Exception {
 
     	when(cityrepository.findBycityName(city.getCityName())).thenReturn(city);
 
