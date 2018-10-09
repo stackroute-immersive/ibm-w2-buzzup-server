@@ -327,8 +327,5 @@ services:
 #      - ./import:/import 
     healthcheck:
       test: "exit 0" 
-
-
       condition: service_healthy
-   healthcheck:
-    test: "exit 0"
+   
