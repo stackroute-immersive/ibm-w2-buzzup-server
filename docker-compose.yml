@@ -311,7 +311,7 @@ services:
 
   neo4j:
     image: neo4j:latest
-ports:	
+    ports:	
       - "7474:7474"
       - "7687:7687"
     container_name: neo4j
