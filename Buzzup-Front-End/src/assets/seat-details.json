@@ -1,0 +1,24 @@
+[
+    {
+
+     "theatreId": "1234",
+        "row":[
+          {
+            "rowId":"2",
+            "column":[
+              {
+                "columnId": "3",
+                "seat":[
+                  {
+                    "seatPresent":"true",
+                    "seatValue":"23"
+                  }
+                ]
+              }
+            ],
+            "rowScreen": "true"
+          }
+          ]
+    }
+
+]

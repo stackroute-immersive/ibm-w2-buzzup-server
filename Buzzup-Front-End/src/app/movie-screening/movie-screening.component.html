@@ -1,0 +1,114 @@
+<!-- Heading -->
+<h1 class="heading">Registration for Movie Screening</h1>
+
+<!-- Theater Name -->
+<h3 class="heading">Theater Name: {{theatre.theatreName}}</h3>
+
+<!-- Button to initialize movie list -->
+<div class="heading">
+  <button mat-raised-button type="submit" (click) = "onSelect()">Click Here to Register Event</button>
+</div>
+
+<!-- Form -->
+<form class="registration">
+
+<!-- Dropdown to select movie -->
+  <mat-form-field class="form">
+    <mat-select placeholder="Select Movie" [(ngModel)]="movieName" [ngModelOptions]="{standalone: true}">
+      <mat-option  [value]="movie.movieName">
+        {{movie.movieName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<!-- DatePicker -->
+  <!-- <mat-form-field class="form">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="movieDate" [ngModelOptions]="{standalone: true}">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> -->
+
+</form>
+
+<p class="tag">Weekdays Price</p>
+<!-- Category List -->
+<div class="form" *ngFor="let category of theatre.typesOfSeats" >
+  <p class="tag">{{category}}:</p>
+   
+<!-- Expansion Panel to Set Price for particular category -->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+                
+          <mat-panel-description>
+          Enter Pricing
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+          
+        <mat-form-field>
+          <input matInput placeholder="Ticket Price" [(ngModel)]="weekdayprice">
+        </mat-form-field>
+          
+        <button mat-raised-button class="button" type="submit" (click)="onClickSet(category,weekdayprice)">Set Price</button> 
+              
+      </mat-expansion-panel>
+           
+    </mat-accordion>
+    
+</div>
+
+
+<p class="tag">Weekend Price</p>
+<!-- Category List -->
+<div class="form" *ngFor="let category of theatre.typesOfSeats" >
+  <p class="tag">{{category}}:</p>
+   
+<!-- Expansion Panel to Set Price for particular category -->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+                
+          <mat-panel-description>
+          Enter Pricing
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+          
+        <mat-form-field>
+          <input matInput placeholder="Ticket Price" [(ngModel)]="weekendprice">
+        </mat-form-field>
+          
+        <button mat-raised-button class="button" type="submit" (click)="onClickSetPrice(category,weekendprice)">Set Price</button> 
+              
+      </mat-expansion-panel>
+           
+    </mat-accordion>
+    
+</div>
+<!-- Checkbox to select time slot -->
+<div class="check">
+    <p class="tag">Enter Time Slot:</p>
+    
+    <!-- <span class="checkbox" *ngFor='let t of timeSlotArray'>
+      <mat-checkbox (click)="onClickCheckbox(t)">
+      {{t}}
+      </mat-checkbox>
+    </span>            -->
+    <mat-checkbox class="checkbox" (click)="nineClicked()">
+      9-12 p.m
+    </mat-checkbox>
+    <mat-checkbox class="checkbox" (click)="twelveClicked()">
+      12-3 p.m
+    </mat-checkbox>
+    <mat-checkbox class="checkbox" (click)="threeClicked()">
+      3-6 p.m
+    </mat-checkbox>
+    <mat-checkbox class="checkbox" (click)="sixClicked()">
+      6-9 p.m
+    </mat-checkbox>
+</div>
+
+<!-- Button for submitting the details -->
+<div class="btn">
+  <button mat-raised-button type="submit" (click) = "onSubmit()">Submit</button>
+</div>
+

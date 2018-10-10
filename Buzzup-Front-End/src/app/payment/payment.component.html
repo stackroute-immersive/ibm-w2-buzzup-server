@@ -1,0 +1,11 @@
+<form>
+  <input type="text" placeholder="Credit Card #" name="cardNumber">
+  <input type="text" placeholder="Expiration Month" name="expMonth">
+  <input type="text" placeholder="Expiration Year" name="expYear">
+  <input type="text" placeholder="CVC" name="cvc">
+  <button (click)="chargeCreditCard()">Submit</button>
+</form>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+    Stripe.setPublishableKey('pk_test_GetfFydrI6JXMqkgbY4XXxI5');
+  </script>

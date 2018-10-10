@@ -241,28 +241,6 @@ services:
     ports: 
       - "8087:8087"
     restart: always
-  ticketingengine-service: 
-    build: ticketingengine-service/
-    depends_on: 
-      config-service: 
-        condition: service_healthy
-      eureka-server: 
-        condition: service_healthy
-      kafka: 
-        condition: service_healthy
-      mongodb: 
-        condition: service_healthy
-      moviescreening-service: 
-        condition: service_healthy
-    healthcheck: 
-      test: "exit 0"
-    hostname: localhost
-    image: ticketingengine-service
-    mem_limit: 100m
-    network_mode: host
-    ports: 
-      - "8094:8094"
-    restart: always
   user-profile: 
     build: user-profile/
     depends_on: 
@@ -294,4 +272,16 @@ services:
       - "2181:2181"
     restart: always
 version: "2.1"
+
+buzzup-front-end:
+  build: Buzzup-Front-End/
+  image: buzzup-front-end
+  container_name: buzzup-front-end
+  network_mode: "host"
+  hostname: localhost
+  ports:
+   - 4200:4200
+  restart: always
+  healthcheck:
+   test: "exit 0" 
 
