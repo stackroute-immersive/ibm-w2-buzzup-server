@@ -32,6 +32,7 @@ services:
     ports: 
       - "8762:876"
     restart: always
+
   authentication-service: 
     build: authentication-service/
     depends_on: 
@@ -52,6 +53,7 @@ services:
     ports: 
       - "8080:8080"
     restart: always
+
   config-service: 
     build: config-service/
     healthcheck: 
@@ -63,6 +65,7 @@ services:
     ports: 
       - "8084:8084"
     restart: always
+
   distributor-service: 
     build: distributor-service/
     depends_on: 
@@ -81,6 +84,7 @@ services:
     ports: 
       - "8088:8088"
     restart: always
+
   kafka: 
     depends_on: 
       - zookeeper
@@ -97,6 +101,7 @@ services:
     ports: 
       - "9092:9092"
     restart: always
+
   mongodb: 
     container_name: mongodb
     healthcheck: 
@@ -108,6 +113,7 @@ services:
     restart: always
     volumes: 
       - "./data/db:/data/db"
+
   moviescreening-service: 
     build: moviescreening-service/
     depends_on: 
@@ -128,6 +134,7 @@ services:
     ports: 
       - "8082:8082"
     restart: always
+
   mysql: 
     container_name: mysql
     environment: 
@@ -150,7 +157,7 @@ services:
   neo4j: 
     container_name: neo4j
     environment: 
-      - NEO4J_AUTH=neo4j/12345
+      - NEO4J_AUTH=neo4j/neo4j
     healthcheck: 
       test: "exit 0"
     image: "neo4j:latest"
@@ -278,7 +285,6 @@ services:
     ports: 
       - "2181:2181"
     restart: always
-
 
   buzzup-front-end:
    build: Buzzup-Front-End/
