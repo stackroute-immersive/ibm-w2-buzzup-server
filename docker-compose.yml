@@ -27,7 +27,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: zuul-service
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8762:876"
@@ -48,7 +48,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: authentication-service
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8080:8080"
@@ -60,7 +60,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: config-service
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8084:8084"
@@ -79,7 +79,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: distributor-service1
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8088:8088"
@@ -129,7 +129,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: moviescreening-service
-    mem_limit: 150m
+    mem_limit: 250m
     network_mode: host
     ports: 
       - "8082:8082"
@@ -185,7 +185,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: recommendation-service
-    mem_limit: 150m
+    mem_limit: 250m
     network_mode: host
     ports: 
       - "8091:8091"
@@ -206,7 +206,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: schedular-service
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8095:8095"
@@ -229,7 +229,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: search-service
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8089:8089"
@@ -248,7 +248,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: theatre-service
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8087:8087"
@@ -269,7 +269,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: user-profile
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "8085:8085"
@@ -280,7 +280,7 @@ services:
       test: "exit 0"
     hostname: localhost
     image: wurstmeister/zookeeper
-    mem_limit: 100m
+    mem_limit: 200m
     network_mode: host
     ports: 
       - "2181:2181"
