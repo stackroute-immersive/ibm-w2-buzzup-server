@@ -310,8 +310,8 @@ services:
 
 
   neo4j:
-    image: neo4j:latest
-    ports:	
+    image: neo4j:latest   
+      ports:	
       - "7474:7474"
       - "7687:7687"
     container_name: neo4j
@@ -327,5 +327,8 @@ services:
 #      - ./import:/import 
     healthcheck:
       test: "exit 0" 
+
+
       condition: service_healthy
-   
+    healthcheck:
+    test: "exit 0"
