@@ -1,4 +1,5 @@
- 
+version: "2.1"
+
 services: 
   api-gateway: 
     build: zuul-apigateway/
@@ -181,6 +182,7 @@ services:
     ports: 
       - "8091:8091"
     restart: always
+  
   schedular-service: 
     build: schedular-service/
     depends_on: 
@@ -201,6 +203,7 @@ services:
     ports: 
       - "8095:8095"
     restart: always
+  
   search-service: 
     build: search-service/
     depends_on: 
@@ -223,6 +226,7 @@ services:
     ports: 
       - "8089:8089"
     restart: always
+  
   theatre-service: 
     build: theatre-service/
     depends_on: 
@@ -241,6 +245,7 @@ services:
     ports: 
       - "8087:8087"
     restart: always
+  
   user-profile: 
     build: user-profile/
     depends_on: 
@@ -261,6 +266,7 @@ services:
     ports: 
       - "8085:8085"
     restart: always
+  
   zookeeper: 
     healthcheck: 
       test: "exit 0"
@@ -271,17 +277,17 @@ services:
     ports: 
       - "2181:2181"
     restart: always
-version: "2.1"
 
-buzzup-front-end:
-  build: Buzzup-Front-End/
-  image: buzzup-front-end
-  container_name: buzzup-front-end
-  network_mode: "host"
-  hostname: localhost
-  ports:
-   - 4200:4200
-  restart: always
-  healthcheck:
-   test: "exit 0" 
+
+  buzzup-front-end:
+   build: Buzzup-Front-End/
+   image: buzzup-front-end
+   container_name: buzzup-front-end
+   network_mode: "host"
+   hostname: localhost
+   ports:
+    - 4200:4200
+   restart: always
+   healthcheck:
+    test: "exit 0" 
 
