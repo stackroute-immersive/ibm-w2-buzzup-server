@@ -144,19 +144,21 @@ services:
     restart: always
     volumes: 
       - "/opt/datasql:/var/lib/mysql"
+
   neo4j: 
     container_name: neo4j
     environment: 
       - NEO4J_AUTH=neo4j/12345
     healthcheck: 
+      test: "exit 0"
     image: "neo4j:latest"
     mem_limit: 1024m
     ports: 
-      - "7474:7474"
-      - "7687:7687"
-    test: "exit 0"
+       - "7474:7474"
+       - "7687:7687"
     volumes: 
       - "$HOME/neo4j/data:/data"
+
   recommendation-service: 
     build: recommendation-service/
     depends_on: 
