@@ -1,6 +1,21 @@
 version: "2.1"
 
 services: 
+  eureka-server: 
+    build: eureka-server/
+    depends_on: 
+      config-service: 
+        condition: service_healthy
+    healthcheck: 
+      test: "exit 0"
+    hostname: localhost
+    image: eureka-service
+    mem_limit: 100m
+    network_mode: host
+    ports: 
+      - "8761:8761"
+    restart: always
+
   api-gateway: 
     build: zuul-apigateway/
     depends_on: 
@@ -66,21 +81,7 @@ services:
     ports: 
       - "8088:8088"
     restart: always
-  eureka-server: 
-    build: eureka-server/
-    depends_on: 
-      config-service: 
-        condition: service_healthy
-    healthcheck: 
-      test: "exit 0"
-    hostname: localhost
-    image: eureka-service
-    mem_limit: 100m
-    network_mode: host
-    ports: 
-      - "8761:8761"
-    restart: always
-  kafka: 
+    kafka: 
     depends_on: 
       - zookeeper
     environment: 
