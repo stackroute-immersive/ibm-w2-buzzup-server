@@ -2,7 +2,7 @@ version: "2.1"
 
 services: 
   eureka-server: 
-    build: eureka-server/
+    build: eureka-server
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -17,7 +17,7 @@ services:
     restart: always
 
   api-gateway: 
-    build: zuul-apigateway/
+    build: zuul-apigateway
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -34,7 +34,7 @@ services:
     restart: always
 
   authentication-service: 
-    build: authentication-service/
+    build: authentication-service
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -55,7 +55,7 @@ services:
     restart: always
 
   config-service: 
-    build: config-service/
+    build: config-service
     healthcheck: 
       test: "exit 0"
     hostname: localhost
@@ -67,7 +67,7 @@ services:
     restart: always
 
   distributor-service: 
-    build: distributor-service/
+    build: distributor-service
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -115,7 +115,7 @@ services:
       - "./data/db:/data/db"
 
   moviescreening-service: 
-    build: moviescreening-service/
+    build: moviescreening-service
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -169,7 +169,7 @@ services:
       - "$HOME/neo4j/data:/data"
 
   recommendation-service: 
-    build: recommendation-service/
+    build: recommendation-service
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -192,7 +192,7 @@ services:
     restart: always
   
   schedular-service: 
-    build: schedular-service/
+    build: schedular-service
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -213,7 +213,7 @@ services:
     restart: always
   
   search-service: 
-    build: search-service/
+    build: search-service
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -236,7 +236,7 @@ services:
     restart: always
   
   theatre-service: 
-    build: theatre-service/
+    build: theatre-service
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -255,7 +255,7 @@ services:
     restart: always
   
   user-profile: 
-    build: user-profile/
+    build: user-profile
     depends_on: 
       config-service: 
         condition: service_healthy
@@ -287,7 +287,7 @@ services:
     restart: always
 
   buzzup-front-end:
-   build: Buzzup-Front-End/
+   build: Buzzup-Front-End
    image: buzzup-front-end
    container_name: buzzup-front-end
    network_mode: "host"
