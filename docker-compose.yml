@@ -148,7 +148,7 @@ services:
     container_name: neo4j
     environment: 
       - NEO4J_AUTH=neo4j/12345
-    healthcheck: ~
+    healthcheck: 
     image: "neo4j:latest"
     mem_limit: 1024m
     ports: 
