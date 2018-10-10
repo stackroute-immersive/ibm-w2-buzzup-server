@@ -81,7 +81,7 @@ services:
     ports: 
       - "8088:8088"
     restart: always
-    kafka: 
+  kafka: 
     depends_on: 
       - zookeeper
     environment: 
