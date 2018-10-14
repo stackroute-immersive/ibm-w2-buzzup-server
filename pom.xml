@@ -76,7 +76,7 @@
 		<module>ticketingengine-service</module>
 		<module>schedular-service</module>
 		<module>paymentservice</module>
-		<module>rsvp</module>
+		/*<module>rsvp</module>*/
 		<module>emailService</module>
 	</modules>
 </project>
