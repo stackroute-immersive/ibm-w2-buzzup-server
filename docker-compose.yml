@@ -81,9 +81,9 @@ services:
      test: "exit 0"
 
 
-  emailService:
-     build: emailService/
-     image: emailService
+  emailservice:
+     build: emailservice/
+     image: emailservice
      #mem_limit: 2g
      restart: always
      network_mode: "host"
