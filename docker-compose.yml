@@ -16,90 +16,6 @@ services:
       - "8761:8761"
     restart: always
 
-  rsvp:
-     build: rsvp
-     image: rsvp
-     #mem_limit: 2g
-     restart: always
-     network_mode: "host"
-     hostname: localhost
-     ports:
-       - 8094:8094
-     depends_on:
-       config-service:
-         condition: service_healthy
-       eureka-server:
-         condition: service_healthy
-       mongodb:
-         condition: service_healthy
-       kafka:
-         condition: service_healthy
-     healthcheck:
-       test: "exit 0"
-  redis:
-    container_name: redis
-    image: redis
-    ports:
-     - "6379:6379"
-    command: redis-server --appendonly yes
-    volumes:
-     - ../data/redis:/data
-    restart: always
-    healthcheck:
-     test: "exit 0"
-
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    network_mode: "host"
-    hostname: localhost
-    ports:
-     - 9087:9090
-    volumes:
-     - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    command:
-     - '--config.file=/etc/prometheus/prometheus.yml'
-    restart: always
-    healthcheck:
-     test: "exit 0"
-
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    network_mode: "host"
-    hostname: localhost
-    ports:
-     - 9086:3000
-    volumes:
-     - /var/lib/grafana
-    environment:
-     - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
-     - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
-     - GF_USERS_ALLOW_SIGN_UP=false
-    restart: always
-    healthcheck:
-     test: "exit 0"
-
-
-  emailService:
-     build: emailService/
-     image: emailService
-     #mem_limit: 2g
-     restart: always
-     network_mode: "host"
-     hostname: localhost
-     ports:
-       - 8093:8093
-     depends_on:
-       config-service:
-         condition: service_healthy
-       eureka-server:
-         condition: service_healthy
-     healthcheck:
-       test: "exit 0"
-
-
-
   api-gateway: 
     build: zuul-apigateway
     depends_on: 
@@ -137,7 +53,6 @@ services:
     ports: 
       - "8080:8080"
     restart: always
-
 
   config-service: 
     build: config-service
@@ -319,47 +234,6 @@ services:
     ports: 
       - "8089:8089"
     restart: always
-
-
-  ticketingengine-service: 
-    build: ticketingengine-service
-    depends_on: 
-      config-service: 
-        condition: service_healthy
-      redis: 
-        condition: service_healthy
-      kafka: 
-        condition: service_healthy
-      mongodb: 
-        condition: service_healthy
-    healthcheck: 
-      test: "exit 0"
-    hostname: localhost
-    image: search-service
-    #mem_limit: 200m
-    network_mode: host
-    ports: 
-      - "8091:8091"
-    restart: always
-
-
-
-  paymentservice: 
-    build: paymentservice
-    depends_on: 
-      kafka: 
-        condition: service_healthy
-    healthcheck: 
-      test: "exit 0"
-    hostname: localhost
-    image: search-service
-    #mem_limit: 200m
-    network_mode: host
-    ports: 
-      - "8095:8095"
-    restart: always
-
-
   
   theatre-service: 
     build: theatre-service
