@@ -36,6 +36,7 @@ services:
          condition: service_healthy
      healthcheck:
        test: "exit 0"
+       
   redis:
     container_name: redis
     image: redis
@@ -47,40 +48,7 @@ services:
     restart: always
     healthcheck:
      test: "exit 0"
-
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    network_mode: "host"
-    hostname: localhost
-    ports:
-     - 9087:9090
-    volumes:
-     - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    command:
-     - '--config.file=/etc/prometheus/prometheus.yml'
-    restart: always
-    healthcheck:
-     test: "exit 0"
-
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    network_mode: "host"
-    hostname: localhost
-    ports:
-     - 9086:3000
-    volumes:
-     - /var/lib/grafana
-    environment:
-     - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
-     - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
-     - GF_USERS_ALLOW_SIGN_UP=false
-    restart: always
-    healthcheck:
-     test: "exit 0"
-
-
+     
   emailservice:
      build: emailservice/
      image: emailservice
@@ -97,8 +65,6 @@ services:
          condition: service_healthy
      healthcheck:
        test: "exit 0"
-
-
 
   api-gateway: 
     build: zuul-apigateway
@@ -363,8 +329,6 @@ services:
       - "8095:8095"
     restart: always
 
-
-  
   theatre-service: 
     build: theatre-service
     depends_on: 
