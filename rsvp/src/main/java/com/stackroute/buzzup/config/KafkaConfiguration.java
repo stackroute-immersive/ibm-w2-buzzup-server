@@ -16,7 +16,7 @@ import com.stackroute.buzzup.kafka.model.EventDetails;
 
 @Configuration
 public class KafkaConfiguration {
-	static final String TOPIC = "rsvpEventFinal";
+	static final String TOPIC = "rsvpEvent";
 
 	@Bean
 	public ProducerFactory<String, EventDetails> producerFactory() {
