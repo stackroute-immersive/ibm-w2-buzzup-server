@@ -1,0 +1,181 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<mat-toolbar class="navbar navbar-expand-sm navbar-light">
+  
+    <mat-toolbar-row>
+      <button mat-icon-button fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <!-- <span>BuzzUp</span> -->
+      <img src="src/logo3.png"  style="float:left;
+      max-width: 100%;max-height: 180%;
+      height: auto !important">
+        
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbarDarkSupportedContent">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search for Movies,Events...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+         <span class="example-spacer"></span> 
+         <div class="login" fxShow="true">
+          <a href="#" mat-button>
+            <mat-icon >account_box</mat-icon>
+          </a>
+         </div>   
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- Heading -->
+<body>
+<div>
+  <br>
+  <br>
+  <br>
+<h1 class="heading">Registration for Movie Screening</h1>
+
+<!-- Theater Name -->
+<h3 class="heading">Theater Name: {{theatre.theatreName}}</h3>
+</div>
+<!-- Button to initialize movie list -->
+<div class="heading">
+  <button mat-raised-button type="submit" (click) = "onSelect()">Click Here to Register Event</button>
+</div>
+
+<!-- Form -->
+<form class="registration">
+
+<!-- Dropdown to select movie -->
+  <mat-form-field class="form">
+    <mat-select placeholder="Select Movie" [(ngModel)]="movieName" [ngModelOptions]="{standalone: true}">
+      <mat-option  [value]="movie.movieName">
+        {{movie.movieName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<!-- DatePicker -->
+  <!-- <mat-form-field class="form">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="movieDate" [ngModelOptions]="{standalone: true}">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> -->
+
+</form>
+
+<p class="tag">Weekdays Price</p>
+<!-- Category List -->
+<div class="form" *ngFor="let category of theatre.typesOfSeats" >
+  <p class="tag">{{category}}:</p>
+   
+<!-- Expansion Panel to Set Price for particular category -->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+                
+          <mat-panel-description>
+          Enter Pricing
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+          
+        <mat-form-field>
+          <input matInput placeholder="Ticket Price" [(ngModel)]="weekdayprice">
+        </mat-form-field>
+          
+        <button mat-raised-button class="button" type="submit" (click)="onClickSet(category,weekdayprice)">Set Price</button> 
+              
+      </mat-expansion-panel>
+           
+    </mat-accordion>
+    
+</div>
+
+
+<p class="tag">Weekend Price</p>
+<!-- Category List -->
+<div class="form" *ngFor="let category of theatre.typesOfSeats" >
+  <p class="tag">{{category}}:</p>
+   
+<!-- Expansion Panel to Set Price for particular category -->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+                
+          <mat-panel-description>
+          Enter Pricing
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+          
+        <mat-form-field>
+          <input matInput placeholder="Ticket Price" [(ngModel)]="weekendprice">
+        </mat-form-field>
+          
+        <button mat-raised-button class="button" type="submit" (click)="onClickSetPrice(category,weekendprice)">Set Price</button> 
+              
+      </mat-expansion-panel>
+           
+    </mat-accordion>
+    
+</div>
+<!-- Checkbox to select time slot -->
+<div class="check">
+    <p class="tag">Enter Time Slot:</p>
+    
+    <!-- <span class="checkbox" *ngFor='let t of timeSlotArray'>
+      <mat-checkbox (click)="onClickCheckbox(t)">
+      {{t}}
+      </mat-checkbox>
+    </span>            -->
+    <mat-checkbox class="checkbox" (click)="nineClicked()">
+      9-12 p.m
+    </mat-checkbox>
+    <mat-checkbox class="checkbox" (click)="twelveClicked()">
+      12-3 p.m
+    </mat-checkbox>
+    <mat-checkbox class="checkbox" (click)="threeClicked()">
+      3-6 p.m
+    </mat-checkbox>
+    <mat-checkbox class="checkbox" (click)="sixClicked()">
+      6-9 p.m
+    </mat-checkbox>
+</div>
+
+<!-- Button for submitting the details -->
+<div class="btn">
+  <button mat-raised-button type="submit" (click) = "onSubmit()">Submit</button>
+</div>
+</body>
+<div class="footer">
+    <br>
+      <div class="container">
+        <div class="row">
+          <br>
+             <div class="p-2 col-md-12 mt-6">
+            
+                <h2>CONTACT</h2>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 text-light fa-phone"></i>080-4127 5059</a> </p>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 text-light fa-envelope-o"></i>buzzup@gmail.com</a> </p>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 fa-map-marker text-light"></i>NIIT Regional Office, 4th B Cross Rd, Koramangala, Bengaluru, Karnataka 560034</a> </p>
+              </div>
+       
+        <div class="row">
+        <div class="col-md-12 mt-9"> 
+            <p class="text-center">© Copyright 2018 Buzzup - All rights reserved. </p>
+            <div class="row text-center">
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-facebook fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-twitter fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-instagram fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-linkedin fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-envelope-o fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-map-marker fa-2x"></i> </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  
+   

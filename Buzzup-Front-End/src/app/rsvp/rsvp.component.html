@@ -1,0 +1,258 @@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<mat-toolbar class="navbar navbar-expand-sm navbar-light">
+  <mat-toolbar-row>
+    <!-- <button mat-icon-button fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <!-- <span>BuzzUp</span> -->
+    <img src="src/logo3.png"  style="float:left;
+    max-width: 100%;max-height: 180%;
+    height: auto !important">
+  </mat-toolbar-row>
+</mat-toolbar>
+<body>
+  <mat-card fxFlex>    
+    <!-- Title of an Card -->    
+    <mat-card-title> 
+        <br> 
+        <br>
+        <br>  
+        <h1>RSVP EVENT</h1>
+    </mat-card-title>    
+    
+    <mat-card-content>    
+        <form [formGroup]="form1" #registration="ngForm">   
+            <table> 
+                <tr>
+                  <td colspan="2">
+                      <img src="src/back12.jpg" style="max-height: 50%">
+                  </td>
+                </tr>  
+                <br> 
+                <tr>    
+                    <td>    
+                        <mat-label class="ref2">Producer Id</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="number" [(ngModel)]="rsvp.id" [ngModelOptions]="{standalone: true}" required>   
+                        </mat-form-field>    
+                    </td>    
+                    <td>    
+                        <mat-label class="ref2">Producer Email</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" formControlName="emailId" [(ngModel)]="rsvp.emailId" required>  
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td>    
+                        <mat-label class="ref2">Producer Contact</mat-label>
+                        <mat-form-field class="demo-full-width"> 
+                            <input matInput type="text" [(ngModel)]="rsvp.createdPhoneNo" [ngModelOptions]="{standalone: true}" required>   
+                            <!-- <input matInput type="number" [(ngModel)]="rsvp.createdPhoneNo" [ngModelOptions]="{standalone: true}" placeholder="Phone Number" required>   -->
+
+                        </mat-form-field>    
+                    </td> 
+                    <td>
+                        <mat-label class="ref2">Event Poster</mat-label>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="url" [(ngModel)]="rsvp.poster" [ngModelOptions]="{standalone: true}" required>   
+                        </mat-form-field>    
+                    </td>  
+                </tr>
+                <tr>    
+                    <td>    
+                        <mat-label class="ref2">Event Name</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" [(ngModel)]="rsvp.eventName" [ngModelOptions]="{standalone: true}" required>  
+                        </mat-form-field>    
+                    </td> 
+                    <td>    
+                        <mat-label class="ref2">Event Type</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" [(ngModel)]="rsvp.type" [ngModelOptions]="{standalone: true}" required>   
+                        </mat-form-field>    
+                    </td>  
+                </tr>
+                <tr>    
+                    <td>
+                        <mat-label class="ref2">Start Date</mat-label>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="date" class="ref3" [(ngModel)]="rsvp.startDate" [ngModelOptions]="{standalone: true}" required>  
+                        </mat-form-field>    
+                    </td> 
+                    <td>    
+                        <mat-label class="ref2">End Date</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="date" class="ref3" [(ngModel)]="rsvp.endDate" [ngModelOptions]="{standalone: true}" required>   
+                        </mat-form-field>    
+                    </td>  
+                </tr>
+                <tr>    
+                    <td>    
+                        <mat-label class="ref2">Start Time</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" [(ngModel)]="rsvp.startTime" [ngModelOptions]="{standalone: true}">  
+                        </mat-form-field>    
+                    </td> 
+                    <td>    
+                        <mat-label class="ref2">End Time</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" [(ngModel)]="rsvp.endTime" [ngModelOptions]="{standalone: true}">   
+                        </mat-form-field>    
+                    </td>  
+                </tr>
+                <tr>    
+                    <td>
+                        <mat-label class="ref2">Event City</mat-label>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" [(ngModel)]="rsvp.city" [ngModelOptions]="{standalone: true}">  
+                        </mat-form-field>    
+                    </td> 
+                    <td>    
+                        <mat-label class="ref2">Event Location</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" [(ngModel)]="rsvp.location" [ngModelOptions]="{standalone: true}" required>   
+                        </mat-form-field>    
+                    </td>  
+                </tr> 
+                <tr>    
+                    <td colspan="2">
+                        <mat-label class="ref2">Event Description</mat-label>    
+                        <mat-form-field class="demo-full-width1">    
+                            <textarea matInput type="textarea" [(ngModel)]="rsvp.description" [ngModelOptions]="{standalone: true}"></textarea>
+                            <!-- <textarea matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>     -->
+                        </mat-form-field>    
+                    </td>    
+                </tr>   
+                <tr>    
+                    <td>    
+                        <mat-label class="ref2">Number Of Guests</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="number" [(ngModel)]="rsvp.numberOfGuests" [ngModelOptions]="{standalone: true}">  
+                        </mat-form-field>    
+                    </td> 
+                    <td>    
+                        <mat-label class="ref2">Artist</mat-label>
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput type="text" [(ngModel)]="rsvp.artist" [ngModelOptions]="{standalone: true}" required>   
+                        </mat-form-field>    
+                    </td>  
+                </tr>
+                <tr>    
+                    <td colspan="2">
+                        <mat-label class="ref2">Recipient Email</mat-label> 
+                           
+                        <mat-form-field class="demo-full-width1">  
+                            
+                            <textarea matInput type="textarea" [(ngModel)]="recipientEmail" [ngModelOptions]="{standalone: true}" required></textarea> 
+                            
+                            <!-- <textarea matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>     -->
+                        </mat-form-field>   
+                        <button type="submit" value="submit" (click)="onAdd(recipientEmail)" color="accent"><b>Add</b></button> 
+                    </td>    
+                </tr>  
+                <span class="ref3" *ngFor="let recipientEmail of recipientEmails">
+                  {{recipientEmail}}&nbsp;&nbsp;
+                </span>  
+               
+                <br>
+                <br>
+                <tr>
+                    <td colspan="2">
+                        <mat-label class="ref2">Event Status</mat-label> &nbsp;&nbsp;
+                        <mat-radio-group [(ngModel)]="rsvp.isCompleted" [ngModelOptions]="{standalone: true}">
+                            <mat-radio-button class="ref2" color="primary" value="active">Active</mat-radio-button>
+                            &nbsp;
+                            <mat-radio-button class="ref2" color="primary" value="inactive">Inactive</mat-radio-button>
+                        </mat-radio-group> 
+                    </td>
+                </tr>
+                <!-- <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput [matDatepicker]="picker" placeholder="Date of birth">    
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>    
+                            <mat-datepicker touchUi="true" #picker></mat-datepicker>    
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td>    
+                        <span>Gender</span><br><br>    
+                        <mat-radio-group>    
+                            <mat-radio-button value="1">Male</mat-radio-button>    
+                            <mat-radio-button value="2">Female</mat-radio-button>    
+                        </mat-radio-group>    
+                    </td>    
+                    <td><br>    
+                        <mat-form-field>    
+                            <mat-select placeholder="Select Blog" [(value)]="selected">    
+                                <mat-option>-- Select Any --</mat-option>    
+                                <mat-option value="1">C#Corner</mat-option>    
+                                <mat-option value="2">C#Corner</mat-option>    
+                                <mat-option value="3">C#Corner</mat-option>    
+                            </mat-select>    
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput placeholder="Email">    
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td colspan="2">    
+    
+                    </td>    
+                </tr>     -->
+                <br>
+                <br>
+                <tr>    
+                    <td colspan="2" class="content-center">    
+                        <button mat-raised-button type="submit" value="submit" (click)="onBook(rsvp)" color="accent"><b>BOOK</b></button>      
+                    </td>    
+                </tr>    
+            </table>    
+        </form>    
+    </mat-card-content>    
+</mat-card>  
+
+</body>
+<div class="footer">
+        <br>
+          <div class="container">
+            <div class="row">
+              <br>
+                 <div class="p-2 col-md-12 mt-6">
+                
+                    <h2>CONTACT</h2>
+                     <p> <a href="#" class="text-light">
+                     <i class="fa d-inline mr-3 text-light fa-phone"></i>080-4127 5059</a> </p>
+                     <p> <a href="#" class="text-light">
+                     <i class="fa d-inline mr-3 text-light fa-envelope-o"></i>buzzup@gmail.com</a> </p>
+                     <p> <a href="#" class="text-light">
+                     <i class="fa d-inline mr-3 fa-map-marker text-light"></i>NIIT Regional Office, 4th B Cross Rd,, Koramangala, Bengaluru, Karnataka 560034</a> </p>
+                  </div>
+           
+            <div class="row">
+            <div class="col-md-12 mt-9"> 
+                <p class="text-center">© Copyright 2018 Buzzup - All rights reserved. </p>
+                <div class="row text-center">
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-facebook fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-twitter fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-instagram fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-linkedin fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-envelope-o fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-map-marker fa-2x"></i> </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      
+       

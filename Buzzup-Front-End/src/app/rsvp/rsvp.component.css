@@ -1,0 +1,170 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';    
+.mat-card {    
+    text-align: -webkit-center;    
+    /* background-image: linear-gradient(-90deg, black,grey); 
+    background-image: linear-gradient(120deg, black 5% ,yellow 85%, black 10%);*/
+    /* background-image: linear-gradient(-90deg,grey, black); */
+    background-image: linear-gradient(-120deg, white  ,black );  
+}    
+    
+.demo-toolbar {    
+    display: flex;    
+    align-items: center;    
+    width: 100%;    
+}    
+    
+.demo-form {    
+    /* min-width: 150px;    
+    max-width: 500px;     */
+    width: 100%;    
+}    
+    
+.demo-full-width {    
+    width: 90%;   
+    font-size: 20px;
+    color:white;
+}    
+
+.demo-full-width1 {    
+  width: 95%;   
+  font-size: 20px;
+  color:white;
+}    
+    
+body {   
+  flex: 1 1 auto;
+  position: static;
+  overflow: hidden;
+  overflow-x: 0;
+    margin: 0;    
+    width:100%;
+    height:100%;
+    font-family: Roboto, sans-serif;   
+    background-image: linear-gradient(-120deg, white  ,black );
+    /*background-image: linear-gradient(-120deg,black 5%, white 95% ); 
+    background-image: linear-gradient(90deg,black, Olive); 
+    background-image: linear-gradient(-120deg, black 20% ,yellow ); */
+}   
+
+.tab1
+{
+
+display: block;
+width: 100%;
+/* overflow-x: auto; */
+}
+
+ref1
+{
+  color : white;
+}
+
+.ref2
+{
+  color: white;
+  font-size: 25px;
+  /* text-shadow:
+        -1px -1px 0 #000,
+        3px -1px 0 #000,
+        -1px 1px 0 #000,
+        3px 1px 0 #000; */
+}
+
+.ref3
+{
+  color: white;
+  font-size: 18px;
+}
+
+h1
+{
+color :rgb(243, 243, 43);
+font-family: Georgia, 'Times New Roman', Times, serif;
+/* text-shadow: 10px 5px black; 
+text-shadow: 0 0 2px black;*/
+text-shadow:
+        -1px -1px 0 #000,
+        2px -1px 0 #000,
+        -1px 1px 0 #000,
+        2px 1px 0 #000;
+}
+
+h2
+{
+  color :black;
+text-shadow: 5px 3px greenyellow;
+}
+
+mat-card {    
+    max-width: 100%;    
+    margin: 2em auto;
+    text-align: center;  
+    background-image: linear-gradient(-120deg, white  ,black );
+}    
+    
+mat-toolbar-row {    
+    justify-content: space-between;    
+}    
+    
+.done {    
+    position: fixed;    
+    bottom: 20px;    
+    right: 0px;
+    color: white;    
+}    
+    
+.content-center {    
+    text-align: -webkit-center;    
+}    
+.navbar {
+    height: 70px;
+    flex: 1 1 auto;
+   
+  
+    position: fixed;
+    z-index: 3;
+    background-image: linear-gradient(rgb(106, 107, 93), rgb(29, 24, 24));
+  } 
+  .container{
+    max-height: 2%;
+    color: white;
+  }
+  .footer {
+    background-image: linear-gradient(rgb(106, 107, 93), black);
+       height: auto;
+       /* padding-bottom: 30px; */
+       position:relative fixed;
+       width: 100%;
+       border-bottom: 1px solid #CCCCCC;
+       color: white;
+       /* border-top: 1px solid #DDDDDD; */
+   }
+   .py-5{
+    
+     max-height: 2vh;
+     
+   }
+.text-center{
+  text-align:center;
+}
+h5{
+  color: rgb(175, 175, 29);
+}
+  mat-icon{
+    color:rgb(255, 204, 0);
+  }
+  body{
+    background-image: linear-gradient(90deg,rgb(3, 3, 3), black);
+    padding-bottom: 10px;
+    height: 100%;
+  
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     margin-top: 0;
+     padding-top: 0;
+     background-size: cover;
+  }
+h2{
+  color:white;
+}

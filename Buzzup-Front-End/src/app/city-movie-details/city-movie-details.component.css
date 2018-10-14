@@ -1,0 +1,248 @@
+.city-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex: 1 1 auto;
+  }
+  
+  .movie-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex: 1 1 auto;
+  }
+  h1{
+    color: darkred;
+    text-shadow: 1px 0 black;
+    text-align: center;
+  } 
+  h3{
+    /* text-shadow: 1px 0 red; */
+    text-align: center;
+    color: maroon;
+  }
+  .cityDisplay{
+    display: flex;
+    flex:1 1 auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-around;
+  }
+  /* .city-card {
+    display: flex;
+    flex:1 1 auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+     max-width: 400px;
+   } */
+  
+   .trendingDisplay{
+    display: flex;
+    flex:1 1 auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-around;
+    padding-top: 100px;
+  }
+  
+   .city-card{
+     max-width: 400px;
+   }
+  
+  mat-card ~ .mat-card{
+     font-weight: bold;
+  }  
+  
+  
+  @media screen and (max-width: 600px) {
+    .city-card {
+      flex: 100%;
+      max-width: 100%;
+      max-height: 300px;
+    }
+    .example-container{
+      flex: 100%;
+      max-width: 100%;
+      max-height: 100%;
+  }
+  
+  .trending-card{
+    flex: 100%;
+    max-width: 100%;
+    max-height: 300px;
+  }
+  }
+  
+  .bengaluru-header-image {
+    background-image: url('/src/bangaloreicon.png');
+    background-size: cover;
+  }
+  .delhi-header-image {
+    background-image: url('/src/delhiicon.png');
+    background-size: cover;
+  }
+  .hyderabad-header-image {
+    background-image: url('/src/hydicon1.png');
+    background-size: cover;
+  }
+  .kolkata-header-image {
+    background-image: url('/src/kolkataicon.png');
+    background-size: cover;
+  }
+  .pune-header-image {
+    background-image: url('/src/puneicon.png');
+    background-size: cover;
+  }
+  
+  /* .br{
+    padding: 50px;
+  } */
+  
+  .host {
+    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    flex: 1 1 auto;
+    padding: 30px;
+    width: auto;
+    box-sizing: border-box;
+  
+  } 
+  
+  mat-form-field ~ .mat-form-field{
+    width: auto;
+  }
+  .mat-search_field,
+   {
+  
+      display: flex;
+      /* display: block; */
+      width:auto;
+      flex-direction: row;
+      flex: 1 1 auto;
+      position: absolute;
+      /* padding: 0 24px 0 0; */
+      margin: 0;
+      /* align-items: center; */
+   
+      
+  }
+  
+  .mat-search_icons{
+    display: block;
+    width:auto;
+    flex-direction: row;
+    flex: 1 1 auto;
+    position: absolute;
+    padding: 0 24px 0 0;
+    margin: 0;
+    padding-top: 20px;
+    margin-left: 100px;
+    
+  }
+  
+  
+  /* .mat-search_icons {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;} */
+      .mat-search_icons:hover {
+          cursor: pointer;
+      }
+      .mat-search_icon-close,
+      .mat-search_icon-search {
+          transition: all .2s cubic-bezier(.4, 0, .2, 1);
+          position: absolute;
+          top: 0;
+          left: 0;
+          /* z-index: 2; */
+          background: #FFF;
+          display: block;
+          border-radius: 50%;
+      }
+      .mat-search_icon-close,
+      .mat-search_icons--active .mat-search_icon-search {
+          opacity: 0;
+          transform: rotate(225deg);
+      }
+      .mat-search_icons--active .mat-search_icon-close {
+          opacity: 1;
+          /* z-index: 3; */
+          visibility: visible;
+          transform: rotate(360deg);
+       }
+      /* .navbar {
+        height: 50px;
+        margin-top: 0%;
+        padding-top: 0%;
+        position: fixed;
+        z-index: 3;
+    }  
+    .navbar li a:hover {
+        background-color: rgb(51, 51, 51);
+        color: #fff;
+      }  */
+      .navbar p {
+        margin: 0;
+    }
+      .navbar {
+        height: 50px;
+        flex: 1 1 auto;
+       
+      
+        position: fixed;
+        z-index: 3;
+        background-image: linear-gradient(#8c8c8c, black);
+    }  
+    .navbar li a:hover {
+          background-color: rgb(51, 51, 51);
+        color: #fff;  
+       
+      }
+    
+    .fixed-footer {
+      background-image: linear-gradient(rgb(106, 107, 93), black);
+         height: auto;
+         /* padding-bottom: 30px; */
+         position:fixed;
+         width: 100%;
+         border-bottom: 1px solid #CCCCCC;
+         color: white;
+         
+         /* border-top: 1px solid #DDDDDD; */
+     }
+     .py-5{
+      
+       max-height: 2vh;
+       
+     }
+  .text-center{
+    text-align:center;
+  }
+  h5{
+    color: rgb(175, 175, 29);
+  }
+    mat-icon{
+      color:rgb(255, 204, 0);
+    }
+.container1
+{
+  width:100%;
+}
+body{
+  background-image: linear-gradient(90deg,rgb(3, 3, 3), black);
+  padding-bottom: 10px;
+  height: 100%;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}

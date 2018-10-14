@@ -1,0 +1,142 @@
+
+.logo
+{
+   position: absolute;
+   left:0px;
+}
+.login
+{
+    background:yellow;
+    position: absolute;
+    right:10px;
+    top:10px;
+    height: 60px;
+    width: 150px;
+
+}
+.register
+{
+    background:yellow;
+    position: absolute;
+    right:20px;
+    height: 50px;
+}
+.image1{
+    position: absolute;
+    left:10px;
+    top:80px;
+}
+.image2{
+    position: absolute;
+    left:700px;
+    top:80px;
+}
+.image3{
+    position: absolute;
+    left:10px;
+    top:400px;
+}   
+.image4{
+    position: absolute;
+    left: 700px;
+    top:400px;
+}
+
+body
+{
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    color: rgba(58, 18, 95, 0.822);
+    font-family: arial, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 4px;
+    margin-left: 0px;
+    max-height: 60px;
+    padding-left: 0px;
+}
+.position{
+    flex: 1 1 auto;
+ }
+ .img1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    max-height: 150px;
+  }
+  .img2 {
+    align-content: center;
+    /* width: 50px;
+    height: 70px; */
+    /* background-color: #8cacea; */
+    /* margin: 5px; */
+    /* flex-grow: 1; */
+    /* flex-shrink: 0; */
+    /* min-width: 680px;
+   min-height: 300px; */
+   width: 750px;
+    max-width: 100%;
+    max-height: 300px;
+    /* flex-basis: 200px; */
+  }
+  @media screen and (max-width: 600px) {
+    .img2 {
+      flex: 100%;
+      max-width: 100%;
+    }
+ }
+ .navbar p {
+    margin: 0;
+}
+  .navbar {
+    height: 50px;
+    flex: 1 1 auto;
+    position: fixed;
+    z-index: 3;
+    background-image: linear-gradient(#8c8c8c, black);
+}  
+.navbar li a:hover {
+      background-color: rgb(51, 51, 51);
+    color: #fff;  
+}
+
+mat-icon{
+    color:rgb(255, 204, 0);
+  }
+  .container{
+    max-height: 2%;
+    color: white;
+  }
+  .fixed-footer {
+    background-image: linear-gradient(rgb(106, 107, 93), black);
+       height: auto;
+       /* padding-bottom: 30px; */
+       position:relative fixed;
+       width: 100%;
+       border-bottom: 1px solid #CCCCCC;
+       color: white;
+       height: 300px;
+       bottom:0;
+       /* border-top: 1px solid #DDDDDD; */
+   }
+h5{
+  color: rgb(175, 175, 29);
+}
+  mat-icon{
+    color:rgb(255, 204, 0);
+  }
+.container1
+{
+width:100%;
+}

@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<mat-toolbar class="navbar navbar-expand-sm navbar-light">
+
+  <mat-toolbar-row>
+    <button mat-icon-button fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="src/logo3.png"  style="float:left;
+    max-width: 100%;max-height: 180%;
+    height: auto !important">
+       
+      <!-- <div class="collapse navbar-collapse text-center justify-content-end" id="navbarDarkSupportedContent">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search for Movies,Events...">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div> -->
+       <!-- <span class="example-spacer"></span> 
+       <div class="login" fxShow="true">
+        <a href="#" mat-button>
+          <mat-icon >account_box</mat-icon>
+        </a>
+       </div>    -->
+</mat-toolbar-row>
+</mat-toolbar>
+
+
+<!-- <form>
+  <input type="text" placeholder="Credit Card #" name="cardNumber">
+  <input type="text" placeholder="Expiration Month" name="expMonth">
+  <input type="text" placeholder="Expiration Year" name="expYear">
+  <input type="text" placeholder="CVC" name="cvc">
+  <button (click)="chargeCreditCard()">Submit</button>
+</form> -->
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h2>Payment Gateway</h2>
+      <!-- <h4>Movie Name:</h4>
+      <h4>Email ID:</h4>
+      <h4>Theatre Name:</h4>
+      <h4>City:</h4>
+      <h4>Time:</h4>
+      <h4>Seat Number:</h4>
+      <h4>Show Date:</h4>
+      <h4>Show ID:</h4>
+      <p>
+      </p> -->
+      <form>
+       <h4><input type="text" placeholder="Credit Card Number" name="cardNumber"></h4> 
+       <h4> <input type="text" placeholder="Expiration Month" name="expMonth"></h4>
+       <h4><input type="text" placeholder="Expiration Year" name="expYear"></h4>
+        <h4> <input type="password" placeholder="CVC" name="cvc"></h4>
+        <!-- <button (click)="chargeCreditCard(); saveTicket();">Submit</button> -->
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="btn1" mat-raised-button (click)="chargeCreditCard();">Pay Now</button>
+      <button class="btn" routerLink="/" mat-raised-button >Go Home</button>
+  
+    </mat-card-actions>
+  </mat-card>
+
+
+  <div class="footer">
+      <br>
+        <div class="container">
+          <div class="row">
+            <br>
+               <div class="p-2 col-md-12 mt-6">
+              
+                  <h2>CONTACT</h2>
+                   <p> <a href="#" class="text-light">
+                   <i class="fa d-inline mr-3 text-light fa-phone"></i>080-4127 5059</a> </p>
+                   <p> <a href="#" class="text-light">
+                   <i class="fa d-inline mr-3 text-light fa-envelope-o"></i>buzzup@gmail.com</a> </p>
+                   <p> <a href="#" class="text-light">
+                   <i class="fa d-inline mr-3 fa-map-marker text-light"></i>NIIT Regional Office, 4th B Cross Rd,, Koramangala, Bengaluru, Karnataka 560034</a> </p>
+                </div>
+         
+          <div class="row">
+          <div class="col-md-12 mt-9"> 
+              <p class="text-center">© Copyright 2018 Buzzup - All rights reserved. </p>
+              <div class="row text-center">
+                  <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-facebook fa-2x"></i> </div>
+                  <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-twitter fa-2x"></i> </div>
+                  <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-instagram fa-2x"></i> </div>
+                  <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-linkedin fa-2x"></i> </div>
+                  <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-envelope-o fa-2x"></i> </div>
+                  <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-map-marker fa-2x"></i> </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    
+      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+      <script type="text/javascript">
+        Stripe.setPublishableKey('pk_test_GetfFydrI6JXMqkgbY4XXxI5');
+      </script>

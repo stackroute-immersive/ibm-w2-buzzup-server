@@ -1,0 +1,131 @@
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <mat-toolbar class="navbar navbar-expand-sm navbar-light">
+  
+      <mat-toolbar-row>
+        <button mat-icon-button fxShow="true" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <!-- <span>BuzzUp</span> -->
+        <img src="src/logo3.png"  style="float:left;
+        max-width: 100%;max-height: 180%;
+        height: auto !important">
+          
+          <div class="collapse navbar-collapse text-center justify-content-end" id="navbarDarkSupportedContent">
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search for Movies,Events...">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+           <span class="example-spacer"></span> 
+           <div class="login" fxShow="true">
+            <a href="#" mat-button>
+              <mat-icon >account_box</mat-icon>
+            </a>
+           </div>   
+    </mat-toolbar-row>
+</mat-toolbar>
+<body>
+<div style="height: 100px;" >
+    <mat-toolbar class="navbar navbar-expand-sm navbar-light">
+  
+      <mat-toolbar-row>
+        <button mat-icon-button fxShow="true" fxHide.gt-sm>
+          <mat-icon></mat-icon>
+        </button>
+        
+        <img src="src/logo.jpg" style="max-height: 100%;width:10%">
+  
+        <span class="example-spacer"></span>
+        <div class="login" fxShow="true">
+          <a href="#" mat-button>
+            <mat-icon ></mat-icon>
+            
+          </a>
+        </div>
+       
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+<div class="layout">
+<table class="child">
+  <tr *ngFor="let seat of seats; let i =  index;">
+  <span *ngIf="i==0">
+    <p>Platinum</p>
+  </span>
+  <span *ngIf="i==1">
+      <p></p>
+  </span>
+  <span *ngIf="i==2">
+      <p>Gold</p>
+  </span>
+  <span *ngIf="i==3">
+      <p></p>
+  </span>
+  <span *ngIf="i==4">
+      <p>Silver</p>
+  </span>
+  <span *ngIf="i==5">
+      <p></p>
+  </span>
+  <span *ngIf="i==6">
+      <p></p>
+  </span>
+  <span *ngIf="i==7">
+      <p></p>
+  </span>
+  <span *ngIf="i==8">
+      <p></p>
+  </span>
+  <td class="padding-right"></td>
+  <td class="seat" *ngFor="let col of seat; let j = index">
+  
+    <img ng-switch-default [src]="imgsrc" (click)="onSelect(i,j)">
+   
+    <!-- <img ng-switch-when="selected" src="src/assets/seat_selected.png"> -->
+    <!-- <img ng-switch-when="reserved" src="src/assets/seat_reserved.png"> -->
+
+  </td>
+  
+  </tr>
+  </table>
+</div>
+<div class="screen">
+  <img class="child" ng-switch-default src="src/assets/screen_layout.png">
+</div>
+<div class="footer">
+    <br>
+      <div class="container">
+        <div class="row">
+          <br>
+             <div class="p-2 col-md-12 mt-6">
+            
+                <h2>CONTACT</h2>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 text-light fa-phone"></i>080-4127 5059</a> </p>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 text-light fa-envelope-o"></i>buzzup@gmail.com</a> </p>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 fa-map-marker text-light"></i>NIIT Regional Office, 4th B Cross Rd,, Koramangala, Bengaluru, Karnataka 560034</a> </p>
+              </div>
+       
+        <div class="row">
+        <div class="col-md-12 mt-9"> 
+            <p class="text-center">© Copyright 2018 Buzzup - All rights reserved. </p>
+            <div class="row text-center">
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-facebook fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-twitter fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-instagram fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-linkedin fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-envelope-o fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-map-marker fa-2x"></i> </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  
+   

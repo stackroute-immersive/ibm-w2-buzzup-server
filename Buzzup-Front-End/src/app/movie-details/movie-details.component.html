@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <div style="height: 100px;" > -->
+    <mat-toolbar class="navbar navbar-expand-sm navbar-light">
+  
+      <mat-toolbar-row>
+        <button mat-icon-button fxShow="true" fxHide.gt-sm>
+          <mat-icon></mat-icon>
+        </button>
+        
+        <img src="src/logo3.png"  style="float:left;
+        max-width: 100%;max-height: 180%;
+        height: auto !important">
+  
+        <span class="example-spacer"></span>
+        <div class="login" fxShow="true">
+          <a href="#" mat-button>
+            <mat-icon ></mat-icon>
+            
+          </a>
+        </div>
+       
+      </mat-toolbar-row>
+    </mat-toolbar>
+  <!-- </div>
+   -->
+<div fxFill="row" fxLayoutAlign="center vertical">
+    <body>
+  <mat-card class="example-card">
+
+    <mat-card-content>
+<br>
+<br>
+<br>
+      <h1>{{movie.movieName}}
+      </h1>
+      <img src="{{ movie.moviePoster }}"/>
+
+      <p>
+        <mat-icon>calendar_today</mat-icon>Release Date:{{movie.movieReleasedate}}
+      </p>
+      <p>
+        <mat-icon>schedule</mat-icon>Duration:{{movie.movieDuration}}
+      </p>
+      <p>
+        <!-- <mat-icon>favorite</mat-icon>{{movie.format}} -->
+      </p>
+
+    <!-- </mat-card-content>
+
+  </mat-card> -->
+  
+  <!-- <mat-card class="example-card1">
+
+    <mat-card-content> -->
+
+      <h5>Languages:</h5>
+      <p>{{movie.languages}}</p>
+
+      <h5>Genre:</h5>
+      <p>{{movie.movieGenre}}</p>
+
+      <h5>Synopsis:</h5>
+      <p>{{movie.synopsis}}
+      </p>
+      <h5>Casts:</h5>
+      <p>{{movie.actors}} {{movie.actress}}
+      </p>
+      <h5>Director:</h5>
+      <p>{{movie.director}} </p>
+      <br>
+      <br>
+      <br>
+      <!-- <a routerLink="/theatredetails" class="btn"><button type="button" class="btn btn-warning">PROCEED</button></a> -->
+      <button type="button" class="btn btn-warning" (click)="onClick(movie.movieName)">PROCEED</button>
+    </mat-card-content>
+
+  </mat-card>
+</body>
+</div>
+<br>
+<div class="footer">
+    <br>
+      <div class="container">
+        <div class="row">
+          <br>
+             <div class="p-2 col-md-12 mt-6">
+            
+                <h2>CONTACT</h2>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 text-light fa-phone"></i>080-4127 5059</a> </p>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 text-light fa-envelope-o"></i>buzzup@gmail.com</a> </p>
+                 <p> <a href="#" class="text-light">
+                 <i class="fa d-inline mr-3 fa-map-marker text-light"></i>NIIT Regional Office, 4th B Cross Rd,, Koramangala, Bengaluru, Karnataka 560034</a> </p>
+              </div>
+       
+        <div class="row">
+        <div class="col-md-12 mt-9"> 
+            <p class="text-center">© Copyright 2018 Buzzup - All rights reserved. </p>
+            <div class="row text-center">
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-facebook fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-twitter fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-instagram fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-linkedin fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-envelope-o fa-2x"></i> </div>
+                <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-map-marker fa-2x"></i> </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div> 

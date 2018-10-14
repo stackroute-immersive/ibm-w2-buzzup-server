@@ -1,0 +1,72 @@
+h1{
+    color: white;
+    text-shadow: 1px 0 black;
+    text-align: center;
+  } 
+  h3{
+    /* text-shadow: 1px 0 red; */
+    text-align: center;
+    color:white;
+  }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  .navbar {
+    height: 70px;
+    flex: 1 1 auto;
+   
+  
+    position: fixed;
+    z-index: 3;
+    background-image: linear-gradient(rgb(106, 107, 93), rgb(29, 24, 24));
+  } 
+  .container{
+    max-height: 2%;
+    color: white;
+  }
+  .footer {
+    background-image: linear-gradient(rgb(106, 107, 93), black);
+       height: auto;
+       /* padding-bottom: 30px; */
+       position:relative fixed;
+       width: 100%;
+       border-bottom: 1px solid #CCCCCC;
+       color: white;
+       /* border-top: 1px solid #DDDDDD; */
+   }
+   .py-5{
+    
+     max-height: 2vh;
+     
+   }
+.text-center{
+  text-align:center;
+}
+h5{
+  color: rgb(175, 175, 29);
+}
+  mat-icon{
+    color:rgb(255, 204, 0);
+  }
+  body{
+    background-image: linear-gradient(90deg,rgb(3, 3, 3), black);
+    padding-bottom: 10px;
+    height: 100%;
+  
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     margin-top: 0;
+     padding-top: 0;
+     background-size: cover;
+  }
+h2{
+  color:white;
+}

@@ -1,0 +1,119 @@
+mat-accordion{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+
+  /* padding: 80px 50px; */
+  /* text-align: center; */
+  /* text-transform: uppercase; */
+  text-rendering: optimizeLegibility;
+}
+.style{
+    color: black;
+    text-transform: uppercase;
+    /* background-color: #e7e5e4; */
+    letter-spacing: .15em;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow:
+      1px -1px 0 #767676;
+
+  }
+  .heading{
+    
+    text-transform: uppercase;
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 4px;
+    margin-left: 0px;
+    max-height: 60px;
+    padding-left: 0px;
+}
+
+/* .position{
+    flex: 1 1 ;
+}
+mat-toolbar{
+    background-color:mediumseagreen;
+    margin-bottom: 50px;
+} */
+.head{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: arial, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 4px;
+    margin-left: 0px;
+    max-height: 60px;
+    padding-left: 0px;
+}
+
+  .login{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .navbar {
+    height: 70px;
+    flex: 1 1 auto;
+   
+  
+    position:fixed;
+    z-index: 3;
+    background-image: linear-gradient(rgb(106, 107, 93), rgb(29, 24, 24));
+  } 
+  .container{
+    max-height: 2%;
+    color: white;
+  }
+  .footer {
+    background-image: linear-gradient(rgb(106, 107, 93), black);
+       height: auto;
+       /* padding-bottom: 30px; */
+       position:relative fixed;
+       width: 100%;
+       border-bottom: 1px solid #CCCCCC;
+       color: white;
+       /* border-top: 1px solid #DDDDDD; */
+   }
+   .py-5{
+    
+     max-height: 2vh;
+     
+   }
+.text-center{
+  text-align:center;
+}
+h5{
+  color: rgb(175, 175, 29);
+}
+  mat-icon{
+    color:rgb(255, 204, 0);
+  }
+  body{
+     background-image: linear-gradient(90deg,grey,white);
+    padding-bottom: 10px;
+    height: 100%;
+     
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     margin-top: 0;
+     padding-top: 0;
+     background-size: cover;
+  }
+h2{
+  color:white;
+}
+
+/* .img{
+  margin-top: 100px;
+} */
+

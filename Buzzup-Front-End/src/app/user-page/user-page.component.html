@@ -1,0 +1,428 @@
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <mat-toolbar class="navbar navbar-expand-sm navbar-light">
+  
+      <mat-toolbar-row>
+        <!-- <button mat-icon-button fxShow="true" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button> -->
+        <!-- <span>BuzzUp</span> -->
+        <img src="src/logo3.png"  style="float:left;
+      max-width: 100%;max-height: 180%;
+      height: auto !important"> 
+          
+          <div class="collapse navbar-collapse text-center justify-content-end" id="navbarDarkSupportedContent">
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search for Movies,Events...">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+           <span class="example-spacer"></span> 
+           <div class="login" fxShow="true">
+            <a href="#" mat-button>
+              <mat-icon >account_box</mat-icon>
+            </a>
+           </div>   
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<body>
+    <br>
+    <br>
+    <br>
+<h1>Hello {{userName}}</h1>
+<h3>Book Movie Tickets and much more..</h3>  
+
+<section class="movie-container">
+        <div class="trendingDisplay">
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <div mat-card-avatar class="bengaluru-header-image"></div>
+                <mat-card-title>Namma Bengaluru</mat-card-title>
+                <mat-card-subtitle class="ref">Silicon Valley of India</mat-card-subtitle>
+            </mat-card-header>
+          
+            <img mat-card-image src="src/bangalore.jpg" alt="Photo of Bengaluru">
+        
+            <mat-card-actions>
+                    <button type="button" class="btn btn-warning">Choose</button>
+            </mat-card-actions>
+        </mat-card>
+    
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <div mat-card-avatar class="delhi-header-image"></div>
+                <mat-card-title>Dildaar Delhi</mat-card-title>
+                <mat-card-subtitle class="ref"> Capital of India</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="src/delhi1.jpg" alt="Photo of Delhi">
+            <mat-card-actions>
+                    <button type="button" class="btn btn-warning">Choose</button>
+            </mat-card-actions>
+        </mat-card>
+    
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <div mat-card-avatar class="hyderabad-header-image"></div>
+                <mat-card-title>Hyderabad</mat-card-title>
+                <mat-card-subtitle class="ref">The City of Biryani</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="src/hyd1.jpg" alt="Photo of hyderabad">
+            <mat-card-actions>
+                    <button type="button" class="btn btn-warning">Choose</button>
+            </mat-card-actions>
+        </mat-card>
+    
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <div mat-card-avatar class="kolkata-header-image"></div>
+                <mat-card-title>Singara Chennai</mat-card-title>
+                <mat-card-subtitle class="ref">Capital of TamilNadu</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="src/chennai.jpg" alt="Photo of Kolkata">
+            <mat-card-actions>
+                    <button type="button" class="btn btn-warning">Choose</button>
+            </mat-card-actions>
+        </mat-card>
+    
+         <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <div mat-card-avatar class="pune-header-image"></div>
+                <mat-card-title>Aamchi Pune</mat-card-title>
+                <mat-card-subtitle class="ref">The Queen of Deccan</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="src/pune1.jpg" alt="Photo of Pune">
+            <mat-card-actions>
+                    <button type="button" class="btn btn-warning">Choose</button>
+            </mat-card-actions>
+        </mat-card> 
+    </div>
+    </section>
+<br>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+   
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="src/c1.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="src/c2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="src/c3.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <br>
+      <br>
+<!-- <h2>Trending Searchs:</h2>
+<br>
+<br>
+<section class="city-container">
+<div class="cityDisplay">
+    <mat-card class="city-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Rockstar</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/Rockstar.jpg" alt="Poster of Trending movie 1">
+        <mat-card-actions>
+                <a routerLink="/search">  <button type="button" class="btn btn-warning">See Details</button></a>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="city-card">
+        <mat-card-header class="ref">
+         <mat-card-title>DDLJ</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/ddlj.jpg" alt="Poster of Trending movie 2">
+        <mat-card-actions> 
+            
+            <a routerLink="/search"> <button type="button" class="btn btn-warning">See Details</button></a>
+        </mat-card-actions>
+        <!-- <app-movie-details [movieName]=movieName></app-movie-details> -->
+    <!-- </mat-card>
+    <mat-card class="city-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Love yatri</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/yatri.jpg" alt="Poster of Trending movie 3">
+        <mat-card-actions>
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">See Details</button></a>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="city-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Raees</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/raees.jpg" alt="Poster of Trending movie 4">
+        <mat-card-actions>
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">See Details</button></a>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="city-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Batti Gul Meter Chalu</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/Batti.jpg" alt="Poster of Trending movie 5">
+        <mat-card-actions>
+            <a routerLink="/search"> <button type="button" class="btn btn-warning">See Details</button></a>
+        </mat-card-actions>
+    </mat-card>
+    </div></section> --> 
+    <br>
+    <br><br>
+    <br>
+    <h4><b>RECOMMENDED MOVIES:</b></h4>
+<section class="movie-container">
+    <div class="trendingDisplay">
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <mat-card-title><b>Rockstar</b></mat-card-title>
+            </mat-card-header>
+            
+            <img mat-card-image src="src/Rockstar.jpg" alt="Poster of Trending movie 1">
+     
+            <mat-card-actions>
+                <a (click)="onClick('Rockstar')"><button type="button" class="btn btn-warning" >See Details</button></a>
+
+               <!-- <a routerLink="/search"> <button type="button" class="btn btn-warning">See Details</button></a> -->
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <mat-card-title><b>DDLJ</b></mat-card-title>
+            </mat-card-header>
+           
+            <img mat-card-image src="src/ddlj.jpg" alt="Poster of Trending movie 2" >
+          
+            <mat-card-actions> 
+                
+                    <a (click)="onClick('DDLJ')"><button type="button" class="btn btn-warning" >See Details</button></a>
+                </mat-card-actions>
+            <!-- <app-movie-details [movieName]=movieName></app-movie-details> -->
+        </mat-card>
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <mat-card-title><B>Love yatri</B></mat-card-title>
+            </mat-card-header>
+           
+            <img mat-card-image src="src/yatri.jpg" alt="Poster of Trending movie 3">
+            
+            <mat-card-actions>
+                    <a (click)="onClick('Love yatri')"><button mtype="button" class="btn btn-warning" >See Details</button></a>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="trending-card">
+            <mat-card-header>
+                <mat-card-title class="ref"><b>Raees</b></mat-card-title>
+            </mat-card-header>
+            
+            <img mat-card-image src="src/raees.jpg" alt="Poster of Trending movie 4">
+           
+            <mat-card-actions class="ref">
+                    <a (click)="onClick('RAEES')"><button mtype="button" class="btn btn-warning" >See Details</button></a>
+                </mat-card-actions>
+        </mat-card>
+        <mat-card class="trending-card">
+            <mat-card-header class="ref">
+                <mat-card-title><b>Batti Gul Meter Chalu</b></mat-card-title>
+            </mat-card-header>
+            
+            <img mat-card-image src="src/Batti.jpg" alt="Poster of Trending movie 5">
+           
+            <mat-card-actions>
+                    <a (click)="onClick('Batti Gul Meter Chalu')"><button type="button" class="btn btn-warning">See Details</button></a>
+                </mat-card-actions>
+        </mat-card>
+    </div>    
+</section>
+<br>
+<br>
+<br>
+
+<h4><B>RECOMMENDATIONS BY GENRE:</B></h4>
+<br>
+<section class="movie-container">
+<div class="trendingDisplay">
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Beirut</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/action.jpeg" alt="Poster of Trending movie 1">
+        <mat-card-actions>
+                <!-- <a (click)="onClick('Beirut')"><button mat-raised-button >View More...</button></a> -->
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+            </mat-card-actions>
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Oru kal Oru Kannadi</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/comedy1.jpg" alt="Poster of Trending movie 2">
+        <mat-card-actions>
+            
+            <!-- <a (click)="onClick('Oru Kal Oru Kannadi')"><button mat-raised-button >View More...</button></a> -->
+            <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+        </mat-card-actions>
+        <!-- <app-movie-details [movieName]="movieName"></app-movie-details> -->
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Nirdosh</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/thriller1.jpg" alt="Poster of Trending movie 3">
+        <mat-card-actions>
+                <!-- <a (click)="onClick('Nirdosh')"><button mat-raised-button >View More...</button></a> -->
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+            </mat-card-actions>
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Raees</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="http://content.hungama.com/audio%20album/display%20image/300x300%20jpeg/4853025682.jpg" alt="Poster of Trending movie 4">
+        <mat-card-actions>
+                <!-- <a (click)="onClick('RAEES')"><button mat-raised-button >View More...</button></a> -->
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+            </mat-card-actions>
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Ae Dil Hai Mushkil</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/aee1.jpg" alt="Poster of Trending movie 5">
+        <mat-card-actions>
+                <!-- <a (click)="onClick('Ae Dil Hai Mushkil')"><button mat-raised-button >View More...</button></a> -->
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+            </mat-card-actions>
+    </mat-card>
+
+</div>    
+</section>
+<br>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+   
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="src/cc1.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="src/c2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="src/c3.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <br>
+      <br>
+<h4><B>RECOMMENDATIONS BY LANGUAGE:</B></h4>
+<br>
+<section class="movie-container">
+<div class="trendingDisplay">
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Aquaman</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/aquaman.jpg" alt="Poster of Trending movie 1">
+        <mat-card-actions>
+                <!-- <a (click)="onClick('Aquaman')"><button mat-raised-button >View More...</button></a> -->
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+            </mat-card-actions>
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Vikram Vedha</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/vikram.jpg" alt="Poster of Trending movie 2">
+        <mat-card-actions>
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a> 
+         
+            <!-- <a (click)="onClick('Vikram Vedha')"><button mat-raised-button >View More...</button></a> -->
+        </mat-card-actions>
+        <!-- <app-movie-details [movieName]="movieName"></app-movie-details> -->
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Chak De India</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/chak.jpg" alt="Poster of Trending movie 3">
+        <mat-card-actions>
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+                <!-- <a (click)="onClick('Chak De India')"><button mat-raised-button >View More...</button></a> -->
+            </mat-card-actions>
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Arjun Reddy</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="src/arjun.jpg" alt="Poster of Trending movie 4">
+        <mat-card-actions>
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+                <!-- <a (click)="onClick('Arjun Reddy')"><button mat-raised-button >View More...</button></a> -->
+            </mat-card-actions>
+    </mat-card>
+    <mat-card class="trending-card">
+        <mat-card-header class="ref">
+            <mat-card-title>Anandam</mat-card-title>
+        </mat-card-header >
+        <img mat-card-image src="src/anandam.jpg" alt="Poster of Trending movie 5">
+        <mat-card-actions>
+                <a routerLink="/search"> <button type="button" class="btn btn-warning">View More...</button></a>
+                <!-- <a (click)="onClick('Anandam')"><button mat-raised-button >View More...</button></a> -->
+            </mat-card-actions>
+    </mat-card>
+</div>    
+</section>
+</body>
+<div class="footer">
+        <br>
+          <div class="container">
+            <div class="row">
+              <br>
+                 <div class="p-2 col-md-12 mt-6">
+                
+                    <h2>CONTACT</h2>
+                     <p> <a href="#" class="text-light">
+                     <i class="fa d-inline mr-3 text-light fa-phone"></i>080-4127 5059</a> </p>
+                     <p> <a href="#" class="text-light">
+                     <i class="fa d-inline mr-3 text-light fa-envelope-o"></i>buzzup@gmail.com</a> </p>
+                     <p> <a href="#" class="text-light">
+                     <i class="fa d-inline mr-3 fa-map-marker text-light"></i>NIIT Regional Office, 4th B Cross Rd,, Koramangala, Bengaluru, Karnataka 560034</a> </p>
+                  </div>
+           
+            <div class="row">
+            <div class="col-md-12 mt-9"> 
+                <p class="text-center">© Copyright 2018 Buzzup - All rights reserved. </p>
+                <div class="row text-center">
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-facebook fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-twitter fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-instagram fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-linkedin fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-envelope-o fa-2x"></i> </div>
+                    <div class="col-md-2 col-4 p-2"> <i class="d-block fa fa-map-marker fa-2x"></i> </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      
+       

@@ -1,0 +1,143 @@
+ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    max-height: 150px;    
+
+}
+li {
+    align-content: center;
+    /* width: 50px;
+    height: 70px; */
+    background-color: #8cacea;
+    margin: 5px;
+    /* flex-grow: 1; */
+    flex-shrink: 0;
+    /* flex-basis: 200px; */
+  }
+.heading{
+    display: flex;
+    justify-content: center;
+    color: rgba(58, 18, 95, 0.822);
+    font-family: arial, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 4px;
+    margin-left: 0px;
+    max-height: 60px;
+    padding-left: 0px;
+}
+.registration{
+    
+    justify-content: center;
+    max-width: 1500px;
+    margin-left: 0px;
+    padding-left: 0px;
+
+}
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    max-width: 2000px;
+}
+.btn{
+    display: flex;
+    margin-left: 0px;
+    padding-left: 0px;
+    
+    margin-top: 15px;
+    justify-content: center;
+}
+.date{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+
+}
+.tag{
+    color: rgba(58, 18, 95, 0.822);
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 13px; 
+    margin-bottom: 4px;
+    margin-left: 0px;
+    max-height: 60px;
+    padding-left: 0px
+}
+.check{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+.checkbox{
+    align-content: center;
+    margin-top: 10px;
+}
+.navbar {
+    height: 70px;
+    flex: 1 1 auto;
+   
+  
+    position:fixed;
+    z-index: 3;
+    background-image: linear-gradient(rgb(106, 107, 93), rgb(29, 24, 24));
+  } 
+  .container{
+    max-height: 2%;
+    color: white;
+  }
+  .footer {
+    background-image: linear-gradient(rgb(106, 107, 93), black);
+       height: auto;
+       /* padding-bottom: 30px; */
+       position:relative fixed;
+       width: 100%;
+       border-bottom: 1px solid #CCCCCC;
+       color: white;
+       /* border-top: 1px solid #DDDDDD; */
+   }
+   .py-5{
+    
+     max-height: 2vh;
+     
+   }
+.text-center{
+  text-align:center;
+}
+h5{
+  color: rgb(175, 175, 29);
+}
+  mat-icon{
+    color:rgb(255, 204, 0);
+  }
+  body{
+    background-image: linear-gradient(90deg,rgb(3, 3, 3), black);
+    padding-bottom: 10px;
+    height: 100%;
+  
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     margin-top: 0;
+     padding-top: 0;
+     background-size: cover;
+  }
+h2{
+  color:white;
+}
+
