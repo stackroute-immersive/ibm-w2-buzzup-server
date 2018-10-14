@@ -1,0 +1,15 @@
+spring:
+ mail:
+   default-encoding: UTF-8
+   host: smtp.gmail.com
+   username: buzzup.stackroute@gmail.com
+   password: buzzup123
+   port: "587"
+   protocol: smtp
+   test-connection: "false"
+   properties:
+     mail:
+       smtp:
+         auth: "true"
+         starttls:
+           enable: "true"

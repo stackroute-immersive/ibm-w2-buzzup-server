@@ -15,8 +15,9 @@
 		<groupId>com.stackroute</groupId>
 		<artifactId>ibm-w2-buzzup-server</artifactId>
 		<version>1.1.0</version>
-		 <!--<relativePath /> lookup parent from repository -->
+		<!-- <relativePath/> lookup parent from repository -->
 	</parent>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,6 +30,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
 		<dependency>
            <groupId>org.springframework.cloud</groupId>
            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

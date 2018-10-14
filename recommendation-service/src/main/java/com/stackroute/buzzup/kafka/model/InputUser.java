@@ -6,30 +6,27 @@ import javax.validation.constraints.Size;
 
 import org.neo4j.ogm.annotation.Id;
 
-public class InputUser { 
+public class InputUser {
 
-	@Id
-	private String userId;
 	@Size(min = 6, max = 20)
 	private String userName;
+	@Id
 	private String emailId;
-	private double mobileNo;
+	private double userMobile;
 	@Size(min = 8, max = 20)
 	private String password;
-	private String gender;
-	private String dateOfBirth;
-	private String[] LanguagesKnown;
-	private String[] genre;
-	private String location;
-	private String[] paymentMethods;
-	private String likes;
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
+	private String userGender;
+	private String age;
+	private String[] prefLang;
+	private String[] movieGenre;
+	private String[] eventCategory;
+	private String city;
+	private String fburl;
+	private String twitterurl;
+	
+	public InputUser() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getUserName() {
@@ -48,12 +45,12 @@ public class InputUser {
 		this.emailId = emailId;
 	}
 
-	public double getMobileNo() {
-		return mobileNo;
+	public double getUserMobile() {
+		return userMobile;
 	}
 
-	public void setMobileNo(double mobileNo) {
-		this.mobileNo = mobileNo;
+	public void setUserMobile(double userMobile) {
+		this.userMobile = userMobile;
 	}
 
 	public String getPassword() {
@@ -64,91 +61,69 @@ public class InputUser {
 		this.password = password;
 	}
 
-	public String getGender() {
-		return gender;
+	public String getUserGender() {
+		return userGender;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
 	}
 
-	public String getDateOfBirth() {
-		return dateOfBirth;
+	public String getAge() {
+		return age;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setAge(String age) {
+		this.age = age;
 	}
 
-	public String[] getLanguagesKnown() {
-		return LanguagesKnown;
+	public String[] getPrefLang() {
+		return prefLang;
 	}
 
-	public void setLanguagesKnown(String[] languagesKnown) {
-		LanguagesKnown = languagesKnown;
+	public void setPrefLang(String[] prefLang) {
+		this.prefLang = prefLang;
 	}
 
-	public String[] getGenre() {
-		return genre;
+	public String[] getMovieGenre() {
+		return movieGenre;
 	}
 
-	public void setGenre(String[] genre) {
-		this.genre = genre;
+	public void setMovieGenre(String[] movieGenre) {
+		this.movieGenre = movieGenre;
 	}
 
-	public String getLocation() {
-		return location;
+	public String[] getEventCategory() {
+		return eventCategory;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setEventCategory(String[] eventCategory) {
+		this.eventCategory = eventCategory;
 	}
 
-	public String[] getPaymentMethods() {
-		return paymentMethods;
+	public String getCity() {
+		return city;
 	}
 
-	public void setPaymentMethods(String[] paymentMethods) {
-		this.paymentMethods = paymentMethods;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public String getLikes() {
-		return likes;
+	public String getFburl() {
+		return fburl;
 	}
 
-	public void setLikes(String likes) {
-		this.likes = likes;
+	public void setFburl(String fburl) {
+		this.fburl = fburl;
 	}
 
-	@Override
-	public String toString() {
-		return "InputUser [userId=" + userId + ", userName=" + userName + ", emailId=" + emailId + ", mobileNo="
-				+ mobileNo + ", password=" + password + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
-				+ ", LanguagesKnown=" + Arrays.toString(LanguagesKnown) + ", genre=" + Arrays.toString(genre)
-				+ ", location=" + location + ", paymentMethods=" + Arrays.toString(paymentMethods) + ", likes=" + likes
-				+ "]";
+	public String getTwitterurl() {
+		return twitterurl;
 	}
 
-	public InputUser(String userId, @Size(min = 6, max = 20) String userName, String emailId, double mobileNo,
-			@Size(min = 8, max = 20) String password, String gender, String dateOfBirth, String[] languagesKnown,
-			String[] genre, String location, String[] paymentMethods, String likes) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
-		this.emailId = emailId;
-		this.mobileNo = mobileNo;
-		this.password = password;
-		this.gender = gender;
-		this.dateOfBirth = dateOfBirth;
-		this.LanguagesKnown = languagesKnown;
-		this.genre = genre;
-		this.location = location;
-		this.paymentMethods = paymentMethods;
-		this.likes = likes;
+	public void setTwitterurl(String twitterurl) {
+		this.twitterurl = twitterurl;
 	}
-
-	public InputUser() {
-		super();
-	}
-
+	
+	
 }

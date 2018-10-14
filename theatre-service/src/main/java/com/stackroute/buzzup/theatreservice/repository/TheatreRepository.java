@@ -1,17 +1,17 @@
 package com.stackroute.buzzup.theatreservice.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.stackroute.buzzup.theatreservice.model.Theatre;
+import com.stackroute.buzzup.kafka.domain.Theatre;
 
 @Repository
-public interface TheatreRepository extends MongoRepository<Theatre, Integer> {
+public interface TheatreRepository extends CrudRepository<Theatre, Integer> {
 
-	public Theatre getByName(String name);
-
-	public Theatre getByEmailId(String emailId);
-
-	public boolean existsByName(String name);
-
+	public Theatre getByTheatreName(String theatre);
+	
+	public Theatre getByEmail(String email);
+	
+	public boolean existsByTheatreName(String theatreName);
+	
 }

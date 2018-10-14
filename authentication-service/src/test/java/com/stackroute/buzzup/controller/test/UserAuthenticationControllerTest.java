@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.buzzup.AuthenticationServiceApplication;
 import com.stackroute.buzzup.controller.UserAuthenticationController;
-import com.stackroute.buzzup.model.User;
+import com.stackroute.buzzup.kafka.model.User;
 import com.stackroute.buzzup.repository.UserAuthenticationRepository;
 import com.stackroute.buzzup.service.UserAuthenticationService;
 

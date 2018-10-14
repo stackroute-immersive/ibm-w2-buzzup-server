@@ -1,7 +1,7 @@
 FROM java:8-jre
 
-COPY ./target/search-service-0.0.1-SNAPSHOT.jar /usr/app/src/search-service-0.0.1-SNAPSHOT
+COPY ./target/search-service-0.0.1-SNAPSHOT.jar /usr/app/src/search-service-0.0.1-SNAPSHOT.jar
 
 WORKDIR usr/app/src
 
-ENTRYPOINT ["java","-jar", "search-service-0.0.1-SNAPSHOT"]
+ENTRYPOINT ["java","-jar", "search-service-0.0.1-SNAPSHOT.jar"]

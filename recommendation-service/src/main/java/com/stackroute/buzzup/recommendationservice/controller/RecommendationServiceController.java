@@ -12,37 +12,49 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stackroute.buzzup.recommendationservice.model.Movie;
-import com.stackroute.buzzup.recommendationservice.service.MovieService;
+import com.stackroute.buzzup.recommendationservice.services.MovieService;
+
+
+
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1")
 public class RecommendationServiceController {
 
-	MovieService movieService;
+	 MovieService movieService;
+
 
 	@Autowired
 	public RecommendationServiceController(MovieService movieService) {
 		super();
 		this.movieService = movieService;
-		// this.userService = userService;
+
 	}
+
+
+
 
 	@GetMapping("/getGenreBasedMoviesForUser/{emailId}")
 	public ResponseEntity<List<Movie>> getGenreBasedMoviesForUser(@PathVariable String emailId) {
-
+		System.out.println("hello"+ emailId);
 		return new ResponseEntity<List<Movie>>(movieService.getGenreBasedMoviesForUser(emailId), HttpStatus.OK);
 	}
 
 	@GetMapping("/getLanguageBasedMoviesForUser/{emailId}")
 	public ResponseEntity<List<Movie>> getLanguageBasedMoviesForUser(@PathVariable String emailId) {
-
+		System.out.println("hello language");
 		return new ResponseEntity<List<Movie>>(movieService.getLanguageBasedMoviesForUser(emailId), HttpStatus.OK);
 	}
-
+	
 	@GetMapping("/getGenreLanguageBasedMoviesForUser/{emailId}")
 	public ResponseEntity<List<Movie>> getGenreLanguageBasedMoviesForUser(@PathVariable String emailId) {
-
+		System.out.println("hello genre");
 		return new ResponseEntity<List<Movie>>(movieService.getGenreLanguageBasedMoviesForUser(emailId), HttpStatus.OK);
+	}
+	@GetMapping("/getTrendingMovies")
+	public ResponseEntity<List<Movie>> getTrendingMovies(){
+		System.out.println("hello genre");
+		return new ResponseEntity<List<Movie>>(movieService.getTrendingMovies(), HttpStatus.OK);
 	}
 }

@@ -1,0 +1,141 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';    
+.mat-card {    
+    text-align: -webkit-center;    
+    /* background-image: linear-gradient(-90deg, black,grey); 
+    background-image: linear-gradient(120deg, black 5% ,yellow 85%, black 10%);*/
+    /* background-image: linear-gradient(-90deg,grey, black); */
+    background-image: linear-gradient(-120deg ,white,black,white );  
+}   
+
+    
+/* .demo-toolbar {    
+    display: flex;    
+    align-items: center;    
+    width: 100%;    
+}     */
+    
+/* .demo-form {   
+    width: 100%;    
+}     */
+    
+.demo-full-width {    
+    width: 100%;   
+    font-size: 20px;
+    color:white;
+
+}    
+    
+body {   
+  flex: auto;
+  /* position: static;
+  overflow: hidden;
+  overflow-x: 0;  
+    margin: 0;  */
+    text-align: justify center;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin:0;
+    width:90%;
+    height:100%;
+    font-family: Roboto, sans-serif;   
+    background-image: linear-gradient(-120deg ,white,black ,white);
+    /*background-image: linear-gradient(-120deg,black 5%, white 95% ); 
+    background-image: linear-gradient(90deg,black, Olive); 
+    background-image: linear-gradient(-120deg, black 20% ,yellow ); */
+}   
+
+ div{
+    display: inline;
+} 
+
+.ref1
+{
+  color: white;
+  font-size: 25px;
+}
+
+.ref2
+{
+    color: white;
+  font-size: 25px;
+}
+
+h1
+{
+font-size: 35px;
+color :rgb(243, 243, 43);
+font-family: Georgia, 'Times New Roman', Times, serif;
+text-shadow:
+        -1px -1px 0 #000,
+        2px -1px 0 #000,
+        -1px 1px 0 #000,
+        2px 1px 0 #000;
+}
+
+h2
+{
+    font-size: 25px;
+    color :rgb(243, 243, 43);
+    text-align: center;
+/* text-shadow: 5px 3px greenyellow; */
+}
+
+/* .show
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex: 1 1 auto;
+  max-width: 250px;
+}
+
+
+.disp {    
+    flex: 100%;
+    max-width: 100%;
+    max-height: 300px;  
+    margin: 2em auto;
+    text-align: center;  
+    background-image: linear-gradient(-120deg, white  ,black );
+}     */
+    
+
+mat-toolbar-row {    
+    justify-content: space-between;    
+}    
+.container{
+    max-height: 2%;
+    color: white;
+  }    
+.done {    
+    position: fixed;    
+    bottom: 20px;    
+    right: 0px;
+    color: white;    
+}    
+    
+.content-center {    
+    text-align: -webkit-center;    
+}    
+.navbar {
+    height: 70px;
+    flex: 1 1 auto;
+   
+  
+    position: fixed;
+    z-index: 3;
+    background-image: linear-gradient(rgb(106, 107, 93), rgb(29, 24, 24));
+  }
+  .footer {
+    background-image: linear-gradient(rgb(106, 107, 93), black);
+       height: 230px;
+       /* padding-bottom: 30px; */
+       position: fixed;
+       width: 100%;
+       border-bottom: 1px solid #CCCCCC;
+       color: white;
+       bottom: 0;
+       line-height: 3px;
+
+       /* border-top: 1px solid #DDDDDD; */
+   }

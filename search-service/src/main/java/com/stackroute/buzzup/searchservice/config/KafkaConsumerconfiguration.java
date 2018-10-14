@@ -14,7 +14,8 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
-import com.stackroute.buzzup.kafka.model.MovieSchedule;
+import com.stackroute.buzzup.kafka.domain.MovieSchedule;
+
 
 @EnableKafka
 @Configuration

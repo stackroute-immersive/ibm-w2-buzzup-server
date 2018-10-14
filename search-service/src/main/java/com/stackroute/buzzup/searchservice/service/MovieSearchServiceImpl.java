@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import com.stackroute.buzzup.kafka.model.MovieSchedule;
+import com.stackroute.buzzup.kafka.domain.MovieSchedule;
 import com.stackroute.buzzup.searchservice.model.City;
 import com.stackroute.buzzup.searchservice.model.Movie;
 import com.stackroute.buzzup.searchservice.model.Theatre;

@@ -1,11 +1,12 @@
 package com.stackroute.buzzup.recommendationservice.model;
 
+import java.io.File;
 import java.util.Arrays;
+import java.util.Map;
 import org.springframework.data.annotation.Id;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.stackroute.buzzup.kafka.model.Seats;
 
-// Domain object for theater details
 public class Theatre {
 	@Id
 	private String theatreId;

@@ -1,122 +1,89 @@
 package com.stackroute.buzzup.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stackroute.buzzup.model.User;
+import com.stackroute.buzzup.exceptions.ProfileAlreadyExitsException;
+import com.stackroute.buzzup.exceptions.UpdateFailedException;
+import com.stackroute.buzzup.exceptions.UserDoesNotExistsException;
+import com.stackroute.buzzup.kafka.model.InputUser;
+import com.stackroute.buzzup.kafka.model.UserProfile;
 import com.stackroute.buzzup.service.UserService;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
+@RequestMapping(value = "/api/v1/userProfile")
 @RestController
-@RequestMapping("/api/v1")
 public class UserController {
 
+	
 	private UserService userService;
-	// Adding for Kafka Connection. 2 Lines.
-	private KafkaTemplate<String, User> kafkaTemplate;
-	private String BOOT_TOPIC = "userData";
 
-	/*
-	 * @Autowired for injecting constructor based dependency in UserService
-	 * argument.
-	 */
+
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
 	@Autowired
-	// Add Kafka Template in Constructor.
-	public UserController(UserService userService, KafkaTemplate<String, User> kafkaTemplate) 
-	{
-		super();
+	public UserController(UserService userService) {
 		this.userService = userService;
-		this.kafkaTemplate = kafkaTemplate;
 	}
 
-	/*
-	 * A method is created for registering the User and mapped with api "/user". On
-	 * successful creation of user return HttpStatus as 201 Created and if the user
-	 * is already present return HttpStatus as 409 CONFLICT.
-	 */
-
-	@PostMapping("/user")
-	public ResponseEntity<?> registerUser(@RequestBody User user) 
-	{
-		ResponseEntity<?> responseEntity;
+	
+	@RequestMapping(value = "/regestration", method = RequestMethod.POST)
+	public ResponseEntity<?> saveUser(@RequestBody InputUser inputUser) throws ProfileAlreadyExitsException {
+		
 		try {
-			if (user.getEmailId().matches("^[a-zA-Z0-9]+@[a-zA-Z0-9-]*.[a-zA-Z0-9-]*")) 
-			{
-				kafkaTemplate.send(BOOT_TOPIC, user);
-				userService.createUser(user);
-				responseEntity = new ResponseEntity<User>(user, HttpStatus.CREATED);
-			} else
-				responseEntity = new ResponseEntity<String>("Email Id not valid", HttpStatus.NOT_ACCEPTABLE);
-		} catch (Exception e) {
-			responseEntity = new ResponseEntity<String>("User Already Exists", HttpStatus.CONFLICT);
+			InputUser userobj = userService.saveUser(inputUser);
+			System.out.println(inputUser.getPrefLang());
+			System.out.println(inputUser.getAge());
+			logger.info("movie is saved into database");
+			return new ResponseEntity<InputUser>(userobj, HttpStatus.CREATED);
+		} catch (ProfileAlreadyExitsException m) {
+			
+			String result = m.getMessage();
+			logger.warn("movie is not added into database");
+			return new ResponseEntity<String>(result, HttpStatus.CONFLICT);
 		}
-		return responseEntity;
+
 	}
 
-	/*
-	 * Method for deleting a User with the specified userID and map this method with
-	 * the api "/user/{id}". On successful deletion return HttpStatus 200 OK and if
-	 * the user is not found return status as 404 NOT_FOUND
-	 */
-
-	@DeleteMapping("/user/{id}")
-	public ResponseEntity<?> deleteUser(@PathVariable String id) {
-		ResponseEntity<?> responseEntity;
+	@RequestMapping(value = "/user/{userid}", method = RequestMethod.GET)
+	public ResponseEntity<?> viewuser(@PathVariable String userid) throws UserDoesNotExistsException {
 		try {
-			userService.deleteUser(id);
-			responseEntity = new ResponseEntity<String>("User Deleted", HttpStatus.OK);
-		} catch (Exception e) {
-			responseEntity = new ResponseEntity<String>("User Not Found", HttpStatus.NOT_FOUND);
+			InputUser userobj = userService.viewUser(userid);
+			logger.info("InputUser retrived from database");
+			return new ResponseEntity<InputUser>(userobj, HttpStatus.FOUND);
+		} catch (UserDoesNotExistsException m) {
+			
+			String result = m.getMessage();
+			logger.warn("movie is not found in database");
+			return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
 		}
-		return responseEntity;
+
 	}
 
-	/*
-	 * Update method for updation of a user with a specific id with a mapping
-	 * "/user/{id}". On successful updation return HttpStatus as 200 OK and if the
-	 * user with the id is not found then return HttpStatus as 404 NOT_FOUND
-	 */
-
-	@PutMapping("/user/{id}")
-	public ResponseEntity<?> updateUser(@PathVariable String id, User user) {
-		ResponseEntity<?> responseEntity;
+	@RequestMapping(value = "/user/{userid}", method = RequestMethod.PUT)
+	public ResponseEntity<?> updateuser(@PathVariable String userid, @RequestBody UserProfile user)
+			throws UpdateFailedException, UserDoesNotExistsException {
 		try {
-			User u = userService.updateUser(id, user);
-			responseEntity = new ResponseEntity<User>(u, HttpStatus.OK);
-		} catch (Exception e) {
-			responseEntity = new ResponseEntity<String>("USer Not Found", HttpStatus.NOT_FOUND);
+			InputUser userobj = userService.updateUser(userid, user);
+			logger.info("InputUser updated");
+			return new ResponseEntity<InputUser>(userobj, HttpStatus.OK);
+		} catch (UserDoesNotExistsException m) {
+			
+			String result = m.getMessage();
+			logger.warn("movie is not updated");
+			return new ResponseEntity<String>(result, HttpStatus.NOT_MODIFIED);
 		}
-		return responseEntity;
-	}
 
-	/*
-	 * Get method for getting a user with a specific id with a mapping "/user/{id}".
-	 * if getting the user is successful return HttpStatus as 200 OK and if the user
-	 * with the id is not found then return HttpStatus as 404 NOT_FOUND
-	 */
-
-	@GetMapping("/user/{id}")
-	public ResponseEntity<?> getUser(@PathVariable String id) {
-		ResponseEntity<?> responseEntity;
-		try {
-			User u = userService.getUser(id);
-			responseEntity = new ResponseEntity<User>(u, HttpStatus.OK);
-		} catch (Exception e) {
-			responseEntity = new ResponseEntity<String>("User Not Found", HttpStatus.NOT_FOUND);
-		}
-		return responseEntity;
 	}
 
 }

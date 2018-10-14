@@ -15,7 +15,7 @@ import org.mockito.MockitoAnnotations;
 
 import com.stackroute.buzzup.exception.UserAlreadyExistsException;
 import com.stackroute.buzzup.exception.UserNotFoundException;
-import com.stackroute.buzzup.model.User;
+import com.stackroute.buzzup.kafka.model.User;
 import com.stackroute.buzzup.repository.UserAuthenticationRepository;
 import com.stackroute.buzzup.service.UserAuthenticationServiceImpl;
 

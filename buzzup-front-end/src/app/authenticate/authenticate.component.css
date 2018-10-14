@@ -1,0 +1,117 @@
+.example-container{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    padding-left: 550px;
+  }
+  mat-icon{
+    color:rgb(255, 204, 0);
+  }
+  .example-container > * {
+    width: 40%;
+    padding-left: 0px;
+    align-content: center;
+  }  .bg-primary {
+    background-image: linear-gradient(30deg,black,rgb(106, 107, 93),rgb(255, 204, 0), black);
+
+   }
+.font2{
+  font-family: 'Faster One',cursive;
+  font-size: 2em;
+}
+  .button-row button,
+{
+  margin: auto;
+}
+
+.a1{
+  text-align: center;
+  color: teal;
+}
+
+ 
+ .navbar {
+  height: 50px;
+  flex: 1 1 auto;
+ 
+
+  position:fixed;
+  z-index: 3;
+  background-image: linear-gradient(#8c8c8c, black);
+}  
+.reff{
+  background-image: linear-gradient(90deg,rgb(3, 3, 3), black);
+
+}
+
+ body{
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-bottom: 340px;
+  background-image: linear-gradient(-120deg, white  ,black );
+  margin: 0;
+ } 
+  
+ 
+
+ .fixed-footer {
+  background-image: linear-gradient(30deg,black,rgb(106, 107, 93), black);
+     height: 230px;
+     /* padding-bottom: 30px; */
+     /* position: relative,fixed; */
+     width: 90%;
+     border-bottom: 1px solid #CCCCCC;
+     color: white;
+     /* border-top: 1px solid #DDDDDD; */
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     line-height: 3px;
+ }
+ .py-5{
+  
+   max-height: 2vh;
+   
+ }
+ .container{
+   max-height: 2%;
+   color: white;
+ }
+ .mat-expansion-panel-header, .mat-expanded,
+.mat-expansion-panel-header .mat-expanded:hover{
+
+  background-image: linear-gradient(-120deg, white  ,black );
+}
+.ref2{
+  color:white;
+}
+.text-center{
+  text-align:left;
+}
+h5{
+  color: rgb(175, 175, 29);
+}
+.register1{
+  /* padding-top: 70px;
+  padding-left: 20px;
+  padding-bottom: 340px; */
+  /* background-image: linear-gradient(-120deg, white  ,black ); */
+  /* max-height:30%;
+  width:50%;
+  bottom: 0; */
+  width: 50%;
+  height: 400px;
+  display: block;
+  margin-left:auto;
+  margin-right:auto; 
+  background-color: transparent;
+  
+}
+h4{
+  color: black;
+}
+h1{
+  color:rgb(239, 243, 10);
+  text-shadow:5px 7px black ;
+ 
+} 

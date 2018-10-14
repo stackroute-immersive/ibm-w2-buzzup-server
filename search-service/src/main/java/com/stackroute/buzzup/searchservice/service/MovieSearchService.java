@@ -2,7 +2,7 @@ package com.stackroute.buzzup.searchservice.service;
 
 import java.util.List;
 
-import com.stackroute.buzzup.kafka.model.MovieSchedule;
+import com.stackroute.buzzup.kafka.domain.MovieSchedule;
 import com.stackroute.buzzup.searchservice.model.City;
 import com.stackroute.buzzup.searchservice.model.Movie;
 

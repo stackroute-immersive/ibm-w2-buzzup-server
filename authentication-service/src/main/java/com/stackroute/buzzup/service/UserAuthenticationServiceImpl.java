@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.stackroute.buzzup.exception.UserAlreadyExistsException;
 import com.stackroute.buzzup.exception.UserIdAndPasswordMismatchException;
 import com.stackroute.buzzup.exception.UserNotFoundException;
-import com.stackroute.buzzup.model.User;
+import com.stackroute.buzzup.kafka.model.User;
 import com.stackroute.buzzup.repository.UserAuthenticationRepository;
 import com.stackroute.buzzup.security.SecurityTokenGenerator;
 
@@ -41,6 +41,7 @@ public class UserAuthenticationServiceImpl implements UserAuthenticationService
 		String jwtToken = "";
 		jwtToken = Jwts.builder()
 				.setId(user.getEmailId())
+				.claim("name", user.getUserName())
 				.setSubject(user.getUserRole())
 				.setIssuedAt(new Date())
 				.signWith(SignatureAlgorithm.HS256, "secretkey").compact();
