@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -65,6 +67,17 @@ public class MovieController {
 			return new ResponseEntity<String>("{ \"message\": \"" + "no movies with this name" + "\"}", HttpStatus.OK);
 		}
 	}
+	
+	@GetMapping("/movie/{distributorCity}")
+    public ResponseEntity<?> getByDistributorCity(@PathVariable String distributorCity){
+        Movie movie = movieServices.getByCity(distributorCity);
+        if (movie!=null) {
+            return new ResponseEntity<Movie>(movie, HttpStatus.OK);
+        } else {
+            
+            return new ResponseEntity<String>("not found", HttpStatus.OK);
+        }
+    }
 
 
 

@@ -1,7 +1,10 @@
+# pull image of jdk
 FROM java:8-jre
 
-COPY ./target/paymentservice-0.0.1-SNAPSHOT.jar /usr/app/src/paymentservice-0.0.1-SNAPSHOT.jar
+# copy jar file to docker file system
+ADD ./target/payment-1.0.0.jar /usr/app/payment-1.0.0.jar
 
-WORKDIR /usr/app/src
-
-ENTRYPOINT ["java","-jar", "paymentservice-0.0.1-SNAPSHOT.jar"]
+# java -jar <jar fileName>
+WORKDIR usr/app
+ENTRYPOINT ["java","-jar", "payment-1.0.0.jar"]
+EXPOSE 9081

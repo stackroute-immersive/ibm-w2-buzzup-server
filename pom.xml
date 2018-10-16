@@ -76,10 +76,11 @@
 		<module>search-service</module>
 		<module>recommendation-service</module>
 		<module>ticketingengine-service</module>
-		<module>schedular-service</module>
+		<module>show-scheduler</module>
 		<module>paymentservice</module>
+		<module>rsvp</module>
 		<module>emailservice</module>
-	        <module>rsvp</module> 
+		<module>SpringWebSocket</module>
 	</modules>
 </project>
 

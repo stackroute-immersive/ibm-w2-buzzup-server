@@ -13,5 +13,6 @@ public interface Services {
 	public List<Movie> getByMovieTitle(String movieTitle);
 
 	public List<Movie> getAllMovies();
+	public Movie getByCity(String distributorCity);
 
 }

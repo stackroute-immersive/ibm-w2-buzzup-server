@@ -3,7 +3,6 @@ package com.stackroute.buzzup.ticketengine;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -14,7 +13,6 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableRedisRepositories
-@EnableEurekaClient
 public class TicketEngineApplication {
 
 	@Bean

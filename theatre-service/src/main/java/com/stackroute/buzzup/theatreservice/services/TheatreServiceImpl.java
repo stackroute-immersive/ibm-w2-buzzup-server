@@ -53,7 +53,7 @@ public class TheatreServiceImpl implements TheatreService {
 
 	@Override
 	public Theatre getEmailId(String email) throws TheatreNotFoundException {
-		Theatre theatre = theatreRepository.getByEmail(email);
+		Theatre theatre = theatreRepository.getByEmailId(email);
 		return theatre;
 	}
 

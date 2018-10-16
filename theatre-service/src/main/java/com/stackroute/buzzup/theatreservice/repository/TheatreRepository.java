@@ -10,7 +10,7 @@ public interface TheatreRepository extends CrudRepository<Theatre, Integer> {
 
 	public Theatre getByTheatreName(String theatre);
 	
-	public Theatre getByEmail(String email);
+	public Theatre getByEmailId(String email);
 	
 	public boolean existsByTheatreName(String theatreName);
 	

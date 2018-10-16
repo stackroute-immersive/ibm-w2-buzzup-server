@@ -40,5 +40,10 @@ public class ServicesImpl implements Services {
 		List<Movie> movies = (List<Movie>) movieRepositary.findAll();
 		return movies;
 	}
+	@Override
+    public Movie getByCity(String distributorCity) {
+        Movie fetchedMovie = movieRepositary.getByCity(distributorCity);
+        return fetchedMovie;
+    }
 
 }

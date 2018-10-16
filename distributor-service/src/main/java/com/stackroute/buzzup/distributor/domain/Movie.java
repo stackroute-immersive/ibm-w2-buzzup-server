@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Movie {
 	@Id
 	public String id;
+	public String city;
 	private String movieName;
 	private String moviePoster;
 	private String actors;
@@ -33,10 +34,15 @@ public class Movie {
 	public Movie() {
 	}
 
-	public Movie(String id, String movieName, String moviePoster, String actors, String actress, String directors,
-			String movieGenres, String synopsis, String format, String languages, String movieDuration,
-			String movieReleaseDate) {
+	
+
+	
+	public Movie(String id, String city, String movieName, String moviePoster, String actors, String actress,
+			String directors, String movieGenres, String synopsis, String format, String languages,
+			String movieDuration, String movieReleaseDate) {
+		super();
 		this.id = id;
+		this.city = city;
 		this.movieName = movieName;
 		this.moviePoster = moviePoster;
 		this.actors = actors;
@@ -50,7 +56,17 @@ public class Movie {
 		this.movieReleaseDate = movieReleaseDate;
 	}
 
-	
+
+
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	public String getId() {
 		return id;
 	}

@@ -1,4 +1,4 @@
-/*package com.stackroute.buzzup.theatreregistration;
+package com.stackroute.buzzup.theatreregistration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,4 +14,3 @@ public class TheatreRegistrationApplicationTests {
 	}
 
 }
-*/

@@ -15,5 +15,6 @@ public interface MovieRepositary extends MongoRepository<Movie, String> {
 	public List<Movie> getByMovieName(String movieName);
 
 	public Movie getById(String id);
+	public Movie getByCity(String city);
 
 }

@@ -42,7 +42,7 @@ public class TheatreController {
 		try {
 
 			
-			System.out.println(theatre.getEmail());
+			System.out.println(theatre.getEmailId());
 			theatreobj = theatreService.saveTheatre(theatre);
 			return new ResponseEntity<Theatre>(theatreobj, HttpStatus.OK);
 		} catch (TheatreAlreadyExistsException m) {
@@ -53,7 +53,7 @@ public class TheatreController {
 	}
 
 	
-	@RequestMapping(value = "/theater", method = RequestMethod.GET)
+	@RequestMapping(value = "/theater/{emailId}", method = RequestMethod.GET)
 	public ResponseEntity<?> getByEmailId(@RequestParam String email) throws TheatreNotFoundException {
 		Theatre list = null;
 		try {
