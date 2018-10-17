@@ -9,7 +9,7 @@ export class TheaterService {
 
   
   constructor(private _http: HttpClient) { }
-  url = 'http://localhost:8087';
+  url = 'http://localhost:8090';
 
   //this method will return the theater for a producer emailId
   getAllTheater(id): Observable<any>{

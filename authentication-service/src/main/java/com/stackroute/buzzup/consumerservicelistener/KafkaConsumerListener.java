@@ -7,23 +7,26 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 import com.stackroute.buzzup.exception.UserAlreadyExistsException;
-import com.stackroute.buzzup.model.User;
+import com.stackroute.buzzup.kafka.model.InputUser;
+import com.stackroute.buzzup.kafka.model.User;
 import com.stackroute.buzzup.service.UserAuthenticationService;
 
 @Service
-public class KafkaConsumerListener 
-{
+public class KafkaConsumerListener {
 	@Autowired
 	private UserAuthenticationService userAuthenticationService;
-	
-	@KafkaListener(topics = "userData")
-	public void consumeJson(@Payload User user)
+
+	@KafkaListener(topics = "details11")
+	public void consumeJson(@Payload InputUser inputUser)
+
 	{
-		try 
-		{
+		User user = new User();
+		user.setEmailId(inputUser.getEmailId());
+		user.setPassword(inputUser.getPassword());
+		user.setUserName(inputUser.getUserName());
+		try {
 			userAuthenticationService.saveUser(user);
-		} catch (UserAlreadyExistsException e) 
-		{
+		} catch (UserAlreadyExistsException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

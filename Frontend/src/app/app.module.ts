@@ -1,3 +1,4 @@
+import { HomePageComponent } from './home-page/home-page.component';
 //Material API
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,7 @@ import { enableProdMode } from '@angular/core';
 import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material';
 import { TokenStorage } from './core/token.storage';
 import { AuthenticateServiceService } from './authenticate-service.service';
+import { RsvpShowComponent } from './rsvp-show/rsvp-show.component';
 
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { AppComponent } from './app.component';
@@ -30,13 +32,29 @@ import { MatNativeDateModule } from '@angular/material/core';
 // import { ProducerDashboardComponent } from './producer-dashboard/producer-dashboard.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { FrontDashboardComponent } from './front-dashboard/front-dashboard.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { CityMovieDetailsComponent } from './city-movie-details/city-movie-details.component';
+import { UserPageComponent } from './user-page/user-page.component';
+import { PaymentComponent } from './payment/payment.component';
+import { HttpModule } from '@angular/http';
+import { BookSuccessComponent } from './book-success/book-success.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     FrontDashboardComponent,
-    AuthenticateComponent
+    AuthenticateComponent,
+    HomePageComponent,
+    NavBarComponent,
+    MovieDetailsComponent,
+    CityMovieDetailsComponent,
+    UserPageComponent,
+    PaymentComponent,
+    BookSuccessComponent,
+    RsvpShowComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +77,8 @@ import { FrontDashboardComponent } from './front-dashboard/front-dashboard.compo
     MatFormFieldModule,
     MatIconModule,
     MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    HttpModule
   
 
   ],

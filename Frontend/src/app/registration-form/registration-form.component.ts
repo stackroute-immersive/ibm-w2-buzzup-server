@@ -102,6 +102,8 @@ onclickevent(n){
     this.user.userGender = this.userGender;
     this.user.movieGenre = this.movieGenere;
     this.user.eventCategory = this.eventCategory;
+    console.log(this.user);
+
       this.registrationService
       .addUser(this.user)
       .subscribe(data => console.log(data)

@@ -4,7 +4,7 @@ RUN mkdir /src
 
 WORKDIR /src
 
-ADD target/zuul-apigateway-1.0.0.jar /src/zuul.jar
+ADD target/zuul-apigateway-1.1.0.jar /src/zuul.jar
 
 EXPOSE 8092
 

@@ -8,7 +8,7 @@
 
 	<groupId>com.stackroute</groupId>
 	<artifactId>ibm-w2-buzzup-server</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -64,18 +64,23 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<modules>
+<modules>
 		<module>config-service</module>
 		<module>eureka-server</module>
-		<module>zuul-apigateway</module>		
+		<module>zuul-apigateway</module>
 		<module>user-profile</module>
-		<module>authentication-service</module>	
-		<module>neo4jdatamodelling-service</module>
+		<module>authentication-service</module>
 		<module>distributor-service</module>
 		<module>moviescreening-service</module>
 		<module>theatre-service</module>
-		
+		<module>search-service</module>
+		<module>recommendation-service</module>
+		<module>ticketingengine-service</module>
+		<module>show-scheduler</module>
+		<module>paymentservice</module>
+		<module>rsvp</module>
+		<module>emailservice</module>
+		<module>SpringWebSocket</module>
 	</modules>
 </project>
 

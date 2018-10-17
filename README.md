@@ -1,5 +1,7 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d07dd81bddb140bba2c12b227e10badc)](https://www.codacy.com/app/gaurav714/ibm-w2-buzzup-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gaurav714/ibm-w2-buzzup-server&amp;utm_campaign=Badge_Grade)
+Codacy
 
-CircleCI:
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1463420d2d7349df969d50cf812f9a90)](https://www.codacy.com/app/utkarsh311/ibm-w2-matchzone-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stackroute-immersive/ibm-w2-matchzone-server&amp;utm_campaign=Badge_Grade)
 
-[![CircleCI](https://circleci.com/gh/gaurav714/ibm-w2-buzzup-server.svg?style=svg)](https://circleci.com/gh/gaurav714/ibm-w2-buzzup-server)
+CircleCI
+
+[![CircleCI](https://circleci.com/gh/stackroute-immersive/ibm-w2-buzzup-server/tree/v1.1.0.svg?style=svg)](https://circleci.com/gh/stackroute-immersive/ibm-w2-buzzup-server/tree/v1.1.0)

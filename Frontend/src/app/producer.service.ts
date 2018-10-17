@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 export class ProducerService {
 
   constructor(private _http: HttpClient) { }
-  url = 'http://localhost:8088';
+  url = 'http://localhost:8085';
   //this method will retrive all the movies based on cities
   getAllMovie(city): Observable<any>{
-    return this._http.get<any>(`${this.url}/api/v1/distributor/`+city);
+    return this._http.get<any>(`${this.url}/api/v1/movie/`+city);
   }
 }

@@ -7,7 +7,7 @@ import { UserRegistration } from "./user-registration";
   providedIn: "root"
 })
 export class RegistrationService {
- private _url1: string = "http://localhost:8085/api/v1/user";
+ private _url1: string = "http://localhost:8092/api/v1/userProfile/regestration";
 
   constructor(private http: HttpClient) {}
 

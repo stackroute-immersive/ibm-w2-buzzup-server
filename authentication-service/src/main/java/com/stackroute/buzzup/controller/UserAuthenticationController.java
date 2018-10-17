@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.stackroute.buzzup.exception.UserIdAndPasswordMismatchException;
 import com.stackroute.buzzup.exception.UserNotFoundException;
 import com.stackroute.buzzup.exception.UserNullException;
-import com.stackroute.buzzup.model.User;
+import com.stackroute.buzzup.kafka.model.User;
 import com.stackroute.buzzup.service.UserAuthenticationService;
 
 
